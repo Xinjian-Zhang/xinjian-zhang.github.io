@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found</title>
+  <style>
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+      background: url(static/background.jpg) no-repeat center center fixed; 
+      background-size: cover;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .error-message {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .error-container {
+        text-align: left;
+        margin-top: 20%;
+        margin-left: 20%;
+        margin-right: 20%;
+        animation: bounce 2s ease-in-out infinite;
+    }
+
+    .error-message::after {
+        content: ' (.・＿・.)ﾉ';
+    }
+
+    .back-to-home {
+      display: inline-block;
+      font-weight: bold;
+      margin: 20px auto;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      width: auto;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .back-to-home:hover {
+      text-decoration: underline;
+      background: rgba(122, 120, 246, 0.387);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      color: #fff;
+      opacity: 1;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 5px;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="error-container">
+    <div class="error-message">Oops!<br>Page Not Found</div>
+    <a class="back-to-home" href="/">◀ Back to Home</a>
+  </div>
+
+  <div class="copyright">
+    <p>© 2023 Xinjian Zhang. All rights reserved.</p>
+  </div>
+
+</body>
+</html>
