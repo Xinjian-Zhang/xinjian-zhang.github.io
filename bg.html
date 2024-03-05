@@ -103,6 +103,21 @@
       margin-top: 10px;
       margin-bottom: 10px;
     }
+
+
+    #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        background-color: #ffffff31;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 15px;
+        z-index: 99;
+      }
   </style>
   </head>
 
@@ -122,6 +137,22 @@
       e.preventDefault();
       alert('Копирането е забранено!');
     });
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scrollToTopBtn").style.display = "block";
+      } else {
+        document.getElementById("scrollToTopBtn").style.display = "none";
+      }
+    }
+
+
+    function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
 
   </script>
 </head>
@@ -145,7 +176,7 @@
       <div class="contact-info">
         <p><strong>Име:</strong> Синдзян Джан</p>
         <p><strong>Телефон:</strong> +372-58099350</p>
-        <p><strong>Имейл:</strong> <a href="mailto:1xinjian.zhang@gmail.com">zhxj01@gmail.com</a></p>
+        <p><strong>Имейл:</strong> <a href="mailto:1xinjian.zhang@gmail.com">1xinjian.zhang@gmail.com</a></p>
         <p><strong>Университетски имейл:</strong> <a href="mailto:xinjian.zhang@ut.ee">xinjian.zhang@ut.ee</a></p>
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/xinjian-zhang-677aa92a0/">LinkedIn профил</a></p>
       </div>
@@ -255,6 +286,10 @@
       </div>
     </div>
   </div>
+
+  <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+    <span>Нагоре</span>
+  </button>
 
 </div>
   <div class="copyright">

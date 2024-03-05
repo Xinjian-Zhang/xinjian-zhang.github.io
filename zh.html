@@ -99,6 +99,21 @@
       margin-top: 10px;
       margin-bottom: 10px;
     }
+
+    #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        background-color: #ffffff31;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 15px;
+        z-index: 99;
+      }
+
   </style>
   </head>
 
@@ -118,6 +133,22 @@
       e.preventDefault();
       alert('复制已禁用！');
     });
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scrollToTopBtn").style.display = "block";
+      } else {
+        document.getElementById("scrollToTopBtn").style.display = "none";
+      }
+    }
+
+
+    function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
 
   </script>
 </head>
@@ -142,7 +173,7 @@
       <div class="contact-info">
         <p><strong>姓名：</strong> 张新健</p>
         <p><strong>电话：</strong> +372-58099350</p>
-        <p><strong>电子邮件：</strong> <a href="mailto:1xinjian.zhang@gmail.com">zhxj01@gmail.com</a></p>
+        <p><strong>电子邮件：</strong> <a href="mailto:1xinjian.zhang@gmail.com">1xinjian.zhang@gmail.com</a></p>
         <p><strong>学校邮箱：</strong> <a href="mailto:xinjian.zhang@ut.ee">xinjian.zhang@ut.ee</a></p>
         <p><strong>领英：</strong> <a href="https://www.linkedin.com/in/xinjian-zhang-677aa92a0/">LinkedIn个人资料</a></p>
       </div>
@@ -251,6 +282,10 @@
     </div>
   </div>
 
+  <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+    <span>返回顶部</span>
+  </button>
+  
 </div>
   <div class="copyright">
     <p>© 2023 张新健 保留所有权利</p>
