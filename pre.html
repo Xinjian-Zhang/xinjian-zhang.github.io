@@ -1,0 +1,617 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #E9EBFE;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+    background-color: #E9EBFE;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #E9EBFE;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>script</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-no-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#cover">Cover</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#introduction">Introduction</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#method">Method</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#method---defining-the-research-questions">Method - Defining the Research questions</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#method---conducting-search">Method - Conducting Search</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#method---screening">Method - Screening</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#method---keywording">Method - Keywording</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#method---data-extraction--mapping">Method - Data extraction &amp; Mapping</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#rq6">RQ6</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#conclusion">Conclusion</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#thank-you">Thank you!</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#研究背景与动机">研究背景与动机</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#研究目标">研究目标</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#研究方法">研究方法</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主要发现">主要发现</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#结论与未来方向">结论与未来方向</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#rq-2">RQ 2</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#rq-3">RQ 3</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#rq-41">RQ 4.1</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#rq-42">RQ 4.2</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#rq-43">RQ 4.3</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#rq-5">RQ 5</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#rq-6">RQ 6</a></div><ul class="outline-children"></ul></li></div></div><div id='write'  class=''><h2 id='cover'><span>Cover</span></h2><p><span>Good morning, everyone. Today, I&#39;ll be presenting our Systematic Mapping Study on LLM-based Approaches for Code Generation, conducted by myself and my colleague, Fidan</span></p><hr /><h2 id='introduction'><span>Introduction</span></h2><p><span>First of all, the introduction.</span></p><p><span>Large Languages models are expected to transform the way of coding. However, the real-world use of LLMs in coding remains in its early stages. Our study aims to analyze the current research on LLMs&#39; role in code generation, identify ongoing challenges, and propose future research.</span></p><p><span>&quot;Our SMS distills the effectiveness of LLMs in code generation, evaluates the hurdles they currently face, and suggests research directions to amplify their impact on software development.&quot;</span></p><hr /><h2 id='method'><span>Method</span></h2><p><span>About the method, we follow the basic guideline of systematic mapping study, follow these 5 steps during the study process.</span></p><hr /><h2 id='method---defining-the-research-questions'><span>Method - Defining the Research questions</span></h2><p><span>We first defining the research questions. This part is predefined, basically the same as the other groups, however, we modify some sub research questions, like in results part, we focus on the challenges/limitations, which architectures that the LLM model used in certain study and which domains/fields implemented.</span></p><hr /><h2 id='method---conducting-search'><span>Method - Conducting Search</span></h2><p><span>In the methodology segment of our study, we selected 4 sources, we executed our search strategy across these 4 academic databases. </span></p><p><span>Each database required tailored search queries in advanced search, so we apply the different search string. The pie chart indicated that the initial number of papers we found, Springer Link providing the bulk of our sources. We found up to 1234 paper.</span></p><hr /><h2 id='method---screening'><span>Method - Screening</span></h2><p><span>Next, we did the paper screening. Here we applied these rules, Exclusion criteria, eliminated papers older than five years, those not in English, inaccessible materials, and non-academic books. Inclusion criteria, ensured we only considered papers directly related to LLM-based code generation within the disciplines of computer science and software engineering. The pie chart demonstrates the distribution of the final 19 papers after applying these criteria.&quot;</span></p><hr /><h2 id='method---keywording'><span>Method - Keywording</span></h2><p><span>We cataloged key details from each paper. This included recording the paper serials number, title with URL, publication year, and the type of venue, among other details. You can see that some item was linked to specific research questions.</span></p><hr /><h2 id='method---data-extraction--mapping'><span>Method - Data extraction &amp; Mapping</span></h2><p><span>After that, we conducted the data extraction and mapping work; here is the screenshot of what the extraction sheet looks like.</span></p><p><span>Okay, then, Fidan will introduce the results part.</span></p><hr /><h2 id='rq6'><span>RQ6</span></h2><p><span>&quot;Turning to Research Question 6, we assessed the conclusions authors drew from their work, as the predominant themes include Performance Improvement and Future Research Directions; challenges and strategies for improvement; impact and potential applications and some other conclusions.</span></p><hr /><h2 id='conclusion'><span>Conclusion</span></h2><p><span>Here’ the conclusion,</span>
+<span>Our SMS highlights the efficiency and the capability for generating code with varying success based on some task and model, however, some critical challenges like code accuracy and bias reduction still remain,</span>
+<span>There are some implications for both academia and industry, such as the need of improving the model’s performance and considering the ethical implications All in all, the LLM in code generation is a promising field for future research and development.</span></p><hr /><h2 id='thank-you'><span>Thank you!</span></h2><p><span>That’s all, thanks for listening!</span></p><hr /><hr /><h3 id='研究背景与动机'><span>研究背景与动机</span></h3><ul><li><p><strong><span>LLMs在代码生成中的应用</span></strong><span>：LLMs（如GPT和BERT）在软件工程中的应用，特别是在自动化代码生成方面，有望提高开发效率和减少错误。</span></p></li><li><p><strong><span>研究的必要性</span></strong><span>：尽管LLMs技术令人兴奋，但其在编码实践中的应用仍在发展中，需要系统评估以连接理论与实践。</span></p></li></ul><h3 id='研究目标'><span>研究目标</span></h3><ul><li><p><strong><span>总结LLMs在代码生成中的有效性</span></strong><span>：从最近的研究中提炼关键见解。</span></p></li><li><p><strong><span>评估技术的当前挑战和限制</span></strong><span>：识别和分析LLMs在代码生成中遇到的问题。</span></p></li><li><p><strong><span>提出未来的研究方向</span></strong><span>：为了克服现有问题并增强LLMs在软件开发中的作用，提出研究建议。</span></p></li></ul><h3 id='研究方法'><span>研究方法</span></h3><ul><li><p><strong><span>定义研究问题</span></strong><span>：确定了六个主要的研究问题（RQ1至RQ6），涉及出版物的人口统计信息、动机、目标、结果、使用的LLM架构、研究方法和得出的结论。</span></p></li><li><p><strong><span>数据源和搜索策略</span></strong><span>：在IEEE Xplore、ACM Digital Library、Science Direct和Springer Link等数据库中进行了广泛的文献搜索。</span></p></li><li><p><strong><span>筛选过程</span></strong><span>：应用排除和纳入标准，最终选择了19篇与LLMs代码生成明确相关的研究论文。</span></p></li><li><p><strong><span>数据提取与映射</span></strong><span>：根据研究问题提取和整理了相关数据，并进行了分析。</span></p></li></ul><h3 id='主要发现'><span>主要发现</span></h3><ul><li><p><strong><span>人口统计信息</span></strong><span>：研究了2014年之后发表的论文，主要在期刊和会议上发表，涉及学术界和工业界的作者。</span></p></li><li><p><strong><span>动机</span></strong><span>：研究的主要动机包括提高代码生成技术、改进翻译和互操作性、利用LLMs进行各种软件工程任务等。</span></p></li><li><p><strong><span>目标</span></strong><span>：研究目标包括改进代码生成技术、评估AI代码助手和安全措施、评估LLMs在软件工程中的能力等。</span></p></li><li><p><strong><span>结果</span></strong><span>：报告了特定的挑战和限制，如数据质量、算法和模型挑战、软件开发复杂性等。同时，列出了使用的LLM架构和实施LLMs的领域。</span></p></li><li><p><strong><span>研究方法</span></strong><span>：使用了比较分析、实证分析、实验等研究方法。</span></p></li><li><p><strong><span>结论</span></strong><span>：LLMs在提高代码生成性能方面取得了进展，但仍需解决数据质量、算法挑战和伦理问题等关键问题。</span></p></li></ul><h3 id='结论与未来方向'><span>结论与未来方向</span></h3><ul><li><p><strong><span>效率</span></strong><span>：LLMs能够生成功能性代码，但有效性随任务复杂性和模型架构而变化。</span></p></li><li><p><strong><span>挑战</span></strong><span>：需要改进代码准确性、增强上下文理解和减少训练数据中的偏见。</span></p></li><li><p><strong><span>学术界和工业界的启示</span></strong><span>：学术界应专注于改进算法和模型，解决挑战和伦理问题；工业界应利用LLMs进行代码生成，同时确保数据隐私和伦理使用。</span></p></li></ul><hr /><h2 id='rq-2'><span>RQ 2</span></h2><figure class='table-figure'><table><thead><tr><th><span>Motivation</span></th><th><span>Papers</span></th><th><span>Count</span></th></tr></thead><tbody><tr><td><span>Enhancing Code Generation Techniques</span></td><td><span>[1], [2], [10], [12], [13], [14], [15], [19]</span></td><td><span>8</span></td></tr><tr><td><span>Improving Translation and Interoperability</span></td><td><span>[3]</span></td><td><span>1</span></td></tr><tr><td><span>Utilizing LLMs for Various Software Engineering Tasks</span></td><td><span>[4], [6], [7], [8]</span></td><td><span>4</span></td></tr><tr><td><span>Addressing Software Security Concerns</span></td><td><span>[5], [9]</span></td><td><span>2</span></td></tr><tr><td><span>Understanding Implications of LLMs in Software Development</span></td><td><span>[7], [8]</span></td><td><span>2</span></td></tr><tr><td><span>Enhancing Productivity and Education in Programming</span></td><td><span>[13], [17]</span></td><td><span>2</span></td></tr><tr><td><span>Automating Testing and Documentation Processes</span></td><td><span>[15], [16], [18]</span></td><td><span>3</span></td></tr><tr><td><span>Improving Query Customization and Program Repair</span></td><td><span>[18], [19]</span></td><td><span>2</span></td></tr></tbody></table></figure><ol><li><p><strong><span>提高代码生成技术 (Enhancing Code Generation Techniques)</span></strong><span>: 探讨如何改善LLM在代码生成方面的效率和准确性。</span></p></li><li><p><strong><span>改进翻译和互操作性 (Improving Translation and Interoperability)</span></strong><span>: 研究LLM在不同编程语言或系统间转换和沟通的能力。</span></p></li><li><p><strong><span>利用LLM执行各种软件工程任务 (Utilizing LLMs for Various Software Engineering Tasks)</span></strong><span>: 考察LLM在软件工程的多种任务中的应用，包括代码分析和设计。</span></p></li><li><p><strong><span>解决软件安全问题 (Addressing Software Security Concerns)</span></strong><span>: 探索LLM在识别和修复代码安全漏洞中的作用。</span></p></li><li><p><strong><span>理解LLM在软件开发中的影响 (Understanding Implications of LLMs in Software Development)</span></strong><span>: 研究LLM集成到软件开发流程中可能带来的变化和影响。</span></p></li><li><p><strong><span>提高编程的生产力和教育 (Enhancing Productivity and Education in Programming)</span></strong><span>: 讨论LLM如何帮助提高编程教育的效率和质量。</span></p></li><li><p><strong><span>自动化测试和文档处理流程 (Automating Testing and Documentation Processes)</span></strong><span>: 研究LLM在自动化生成测试用例和编写文档方面的潜力。</span></p></li><li><p><strong><span>改进查询定制和程序修复 (Improving Query Customization and Program Repair)</span></strong><span>: 探讨LLM在数据库查询定制和自动程序修复中的应用。</span></p></li></ol><hr /><h2 id='rq-3'><span>RQ 3</span></h2><figure class='table-figure'><table><thead><tr><th><span>Goals</span></th><th><span>Papers</span></th><th><span>Count</span></th></tr></thead><tbody><tr><td><span>Improving Code Generation Techniques</span></td><td><span>[2], [10], [11], [12], [13], [14], [15], [19]</span></td><td><span>8</span></td></tr><tr><td><span>Enhancing Translation and Interoperability</span></td><td><span>[3], [18]</span></td><td><span>2</span></td></tr><tr><td><span>Evaluating AI Code Assistants and Security Measures</span></td><td><span>[4], [5], [9]</span></td><td><span>3</span></td></tr><tr><td><span>Assessing LLM Capabilities in Software Engineering</span></td><td><span>[6], [7]</span></td><td><span>2</span></td></tr><tr><td><span>Exploring Implications of LLMs in Software Development</span></td><td><span>[8]</span></td><td><span>1</span></td></tr><tr><td><span>Improving Documentation and Feedback Processes</span></td><td><span>[1], [16], [17]</span></td><td><span>3</span></td></tr></tbody></table></figure><ol><li><p><strong><span>提高代码生成技术 (Improving Code Generation Techniques)</span></strong><span>：研究旨在改进LLM在自动生成代码方面的方法和性能。</span></p></li><li><p><strong><span>增强翻译和互操作性 (Enhancing Translation and Interoperability)</span></strong><span>：探索LLM在不同编程语言和平台间翻译和协同工作的能力。</span></p></li><li><p><strong><span>评估AI代码助手和安全措施 (Evaluating AI Code Assistants and Security Measures)</span></strong><span>：评价LLM作为代码助手在提供编程帮助和保障代码安全性方面的效用。</span></p></li><li><p><strong><span>评估LLM在软件工程中的能力 (Assessing LLM Capabilities in Software Engineering)</span></strong><span>：考查LLM在软件工程的各个方面，如设计、测试和维护中的应用效果。</span></p></li><li><p><strong><span>探索LLM在软件开发中的影响 (Exploring Implications of LLMs in Software Development)</span></strong><span>：研究整合LLM到软件开发流程中可能带来的长期影响。</span></p></li><li><p><strong><span>改善文档和反馈流程 (Improving Documentation and Feedback Processes)</span></strong><span>：研究如何使用LLM优化软件文档的生成和用户反馈的处理。</span></p></li></ol><hr /><h2 id='rq-41'><span>RQ 4.1</span></h2><figure class='table-figure'><table><thead><tr><th><span>Challenges &amp; Limitations</span></th><th><span>Papers</span></th><th><span>Count</span></th></tr></thead><tbody><tr><td><span>Data Quality and Availability</span></td><td><span>[1], [5], [12], [19]</span></td><td><span>4</span></td></tr><tr><td><span>Algorithmic and Model Challenges</span></td><td><span>[3], [4], [6], [10], [12]</span></td><td><span>5</span></td></tr><tr><td><span>Software Development Complexity</span></td><td><span>[7]</span></td><td><span>1</span></td></tr><tr><td><span>Ethical and Legal Concerns</span></td><td><span>[8]</span></td><td><span>1</span></td></tr><tr><td><span>Security and Vulnerability Assessment</span></td><td><span>[9]</span></td><td><span>1</span></td></tr><tr><td><span>User Insights and Interaction Challenges</span></td><td><span>[11], [14]</span></td><td><span>2</span></td></tr><tr><td><span>Testing and Documentation Complexity</span></td><td><span>[15], [16]</span></td><td><span>2</span></td></tr><tr><td><span>Feedback Quality and Personalization</span></td><td><span>[17]</span></td><td><span>1</span></td></tr><tr><td><span>Natural Language Processing Challenges</span></td><td><span>[18]</span></td><td><span>1</span></td></tr></tbody></table></figure><ol><li><p><strong><span>数据质量和可用性 (Data Quality and Availability)</span></strong><span>：探讨数据集的质量和获取难度如何影响LLM在代码生成中的表现。</span></p></li><li><p><strong><span>算法和模型挑战 (Algorithmic and Model Challenges)</span></strong><span>：研究当前LLM算法和模型存在的问题，如泛化能力、优化难题等。</span></p></li><li><p><strong><span>软件开发复杂性 (Software Development Complexity)</span></strong><span>：讨论LLM如何应对软件开发中的复杂问题，包括高复杂度任务的处理。</span></p></li><li><p><strong><span>道德和法律顾虑 (Ethical and Legal Concerns)</span></strong><span>：研究LLM在编程中应用可能涉及的伦理道德和法律问题。</span></p></li><li><p><strong><span>安全性和脆弱性评估 (Security and Vulnerability Assessment)</span></strong><span>：探讨LLM在识别和应对代码安全漏洞方面的限制。</span></p></li><li><p><strong><span>用户洞察和交互挑战 (User Insights and Interaction Challenges)</span></strong><span>：分析用户如何与LLM交互以及用户反馈对模型改进的影响。</span></p></li><li><p><strong><span>测试和文档编写的复杂性 (Testing and Documentation Complexity)</span></strong><span>：讨论在测试和文档自动化生成中遇到的困难。</span></p></li><li><p><strong><span>反馈质量和个性化 (Feedback Quality and Personalization)</span></strong><span>：考察LLM在提供定制化编程反馈中遇到的挑战。</span></p></li><li><p><strong><span>自然语言处理挑战 (Natural Language Processing Challenges)</span></strong><span>：研究LLM处理编程语言和自然语言混合内容时面临的难题。</span></p></li></ol><hr /><h2 id='rq-42'><span>RQ 4.2</span></h2><figure class='table-figure'><table><thead><tr><th><span>Architectures</span></th><th><span>Papers</span></th><th><span>Count</span></th></tr></thead><tbody><tr><td><span>BERT</span></td><td><span>[9]</span></td><td><span>1</span></td></tr><tr><td><span>Bi-LSTM</span></td><td><span>[4]</span></td><td><span>1</span></td></tr><tr><td><span>ChatGPT</span></td><td><span>[10], [6], [14]</span></td><td><span>3</span></td></tr><tr><td><span>CodeBERT</span></td><td><span>[4]</span></td><td><span>1</span></td></tr><tr><td><span>CodeGen models</span></td><td><span>[12]</span></td><td><span>1</span></td></tr><tr><td><span>CodeT5</span></td><td><span>[3]</span></td><td><span>1</span></td></tr><tr><td><span>GNN (Graph Neural Networks)</span></td><td><span>[4]</span></td><td><span>1</span></td></tr><tr><td><span>GPT-2</span></td><td><span>[19]</span></td><td><span>1</span></td></tr><tr><td><span>GPT-3 and its descendants</span></td><td><span>[5]</span></td><td><span>1</span></td></tr><tr><td><span>GPT-3 Codex</span></td><td><span>[16], [18]</span></td><td><span>2</span></td></tr><tr><td><span>GPT-3.5-turbo</span></td><td><span>[12]</span></td><td><span>1</span></td></tr><tr><td><span>GPT-4</span></td><td><span>[17], [13]</span></td><td><span>2</span></td></tr><tr><td><span>Seq2Seq models</span></td><td><span>[1], [11]</span></td><td><span>2</span></td></tr><tr><td><span>TreeGen</span></td><td><span>[2]</span></td><td><span>1</span></td></tr></tbody></table></figure><ol start='' ><li><p><span>BERT (Bidirectional Encoder Representations from Transformers): 处理自然语言处理任务的流行模型，也被应用于代码相关任务。</span></p></li><li><p><span>Bi-LSTM (Bidirectional Long Short-Term Memory): 处理顺序数据，被应用于代码生成中，以利用代码的顺序性质。</span></p></li><li><p><span>ChatGPT: 基于GPT架构的交互式聊天机器人，表现出了灵活性。</span></p></li><li><p><span>CodeBERT: 结合了自然语言和编程语言，用于处理代码理解和生成任务。</span></p></li><li><p><span>CodeGen模型: 专门针对代码生成任务，进行了探索。</span></p></li><li><p><span>CodeT5: 针对代码和自然语言任务优化的变体，用于增强代码转换任务。</span></p></li><li><p><span>GNN (Graph Neural Networks): 处理代码，因为代码的结构可以被视为图，适合于此。</span></p></li><li><p><span>GPT-2: 早期版本的LLM，用于处理代码生成，显示了其在较新模型出现前的应用。</span></p></li><li><p><span>GPT-3及其衍生模型: 因其能力强大被使用，代表了最新一代的LLM。</span></p></li><li><p><span>GPT-3 Codex: 专门用于编程任务，用于提高代码生成的效率和质量。</span></p></li><li><p><span>GPT-3.5-turbo: GPT-3的改进版本，用于提高代码生成的效率和质量。</span></p></li><li><p><span>GPT-4: LLM的最新进展，用于更复杂代码生成任务。</span></p></li><li><p><span>Seq2Seq模型: 将输入序列转换为输出序列，用于处理代码生成。</span></p></li><li><p><span>TreeGen: 利用代码的树状结构，用于生成代码，显示了结构化编程语言的一个新途径。</span></p></li></ol><hr /><h2 id='rq-43'><span>RQ 4.3</span></h2><figure class='table-figure'><table><thead><tr><th><span>Domains &amp; Fields</span></th><th><span>Papers</span></th><th><span>Count</span></th></tr></thead><tbody><tr><td><span>Automated Testing</span></td><td><span>[15], [19]</span></td><td><span>2</span></td></tr><tr><td><span>Code Documentation Generation</span></td><td><span>[16]</span></td><td><span>1</span></td></tr><tr><td><span>Conversational Programming Assistant</span></td><td><span>[14]</span></td><td><span>1</span></td></tr><tr><td><span>Domain-specific Programming Languages</span></td><td><span>[2], [3], [4], [12]</span></td><td><span>4</span></td></tr><tr><td><span>Software Development Practices</span></td><td><span>[7], [8], [13]</span></td><td><span>3</span></td></tr><tr><td><span>Software Modeling</span></td><td><span>[6]</span></td><td><span>1</span></td></tr><tr><td><span>Software Security</span></td><td><span>[5], [9]</span></td><td><span>2</span></td></tr><tr><td><span>Programming Language Modeling</span></td><td><span>[1], [11]</span></td><td><span>2</span></td></tr><tr><td><span>SQL Query Processing</span></td><td><span>[18]</span></td><td><span>1</span></td></tr></tbody></table></figure><ol start='' ><li><p><strong><span>自动化测试 (Automated Testing)</span></strong><span>：LLM在自动生成测试用例以验证代码质量方面的应用。</span></p></li><li><p><strong><span>代码文档生成 (Code Documentation Generation)</span></strong><span>：利用LLM自动化生成代码文档，简化文档编写过程。</span></p></li><li><p><strong><span>会话式编程助手 (Conversational Programming Assistant)</span></strong><span>：使用LLM创建能够与程序员对话并提供编程帮助的工具。</span></p></li><li><p><strong><span>特定领域的编程语言 (Domain-specific Programming Languages)</span></strong><span>：LLM在特定领域的编程语言，如电子商务或医疗保健中的代码生成。</span></p></li><li><p><strong><span>软件开发实践 (Software Development Practices)</span></strong><span>：LLM如何影响软件开发的常规实践，包括开发流程和团队协作。</span></p></li><li><p><strong><span>软件建模 (Software Modeling)</span></strong><span>：利用LLM进行软件建模和设计的可能性，如自动生成软件设计图。</span></p></li><li><p><strong><span>软件安全 (Software Security)</span></strong><span>：LLM在提高软件安全性，例如检测潜在的安全漏洞方面的角色。</span></p></li><li><p><strong><span>编程语言建模 (Programming Language Modeling)</span></strong><span>：LLM在理解和生成编程语言结构中的应用。</span></p></li><li><p><strong><span>SQL查询处理 (SQL Query Processing)</span></strong><span>：LLM在处理和优化SQL查询，特别是在数据库交互方面的潜能。</span></p></li></ol><hr /><h2 id='rq-5'><span>RQ 5</span></h2><figure class='table-figure'><table><thead><tr><th><span>Methods</span></th><th><span>Papers</span></th><th><span>Count</span></th></tr></thead><tbody><tr><td><span>Comparative Analysis</span></td><td><span>[4], [9], [12], [18]</span></td><td><span>4</span></td></tr><tr><td><span>Empirical Analysis</span></td><td><span>[3], [4], [6], [7], [9], [12], [13], [15], [16], [17], [19]</span></td><td><span>11</span></td></tr><tr><td><span>Empirical Research Methods</span></td><td><span>[5], [7]</span></td><td><span>2</span></td></tr><tr><td><span>Experiment</span></td><td><span>[1], [2], [3], [5], [10], [11], [15], [16], [17]</span></td><td><span>9</span></td></tr><tr><td><span>Prototype Development</span></td><td><span>[13], [18]</span></td><td><span>2</span></td></tr><tr><td><span>Qualitative Analysis</span></td><td><span>[17]</span></td><td><span>1</span></td></tr><tr><td><span>Quantitative Analysis</span></td><td><span>[17]</span></td><td><span>1</span></td></tr><tr><td><span>Case Study</span></td><td><span>[16]</span></td><td><span>1</span></td></tr><tr><td><span>User Study</span></td><td><span>[14]</span></td><td><span>1</span></td></tr></tbody></table></figure><ol start='' ><li><p><strong><span>比较分析 (Comparative Analysis)</span></strong><span>：通过对比研究不同LLM架构或方法，评估它们在代码生成中的效果。</span></p></li><li><p><strong><span>经验分析 (Empirical Analysis)</span></strong><span>：通过实证研究来考察LLM在代码生成中的表现，包括效果评价和实用性分析。</span></p></li><li><p><strong><span>经验研究方法 (Empirical Research Methods)</span></strong><span>：采用基于观察和数据分析的方法来研究LLM在实际环境中的应用。</span></p></li><li><p><strong><span>实验 (Experiment)</span></strong><span>：通过设计和执行实验来测试LLM的性能和可行性。</span></p></li><li><p><strong><span>原型开发 (Prototype Development)</span></strong><span>：涉及开发LLM原型来探索和演示其在特定领域的应用。</span></p></li><li><p><strong><span>定性分析 (Qualitative Analysis)</span></strong><span>：通过分析非数值化的数据来理解LLM在代码生成中的深层次作用。</span></p></li><li><p><strong><span>定量分析 (Quantitative Analysis)</span></strong><span>：通过数值数据来评估LLM相关特性的影响和效果。</span></p></li><li><p><strong><span>案例研究 (Case Study)</span></strong><span>：通过深入分析个别案例来探究LLM在实际应用中的情况和细节。</span></p></li><li><p><strong><span>用户研究 (User Study)</span></strong><span>：聚焦于用户如何互动使用LLM，以及用户的体验和反馈。</span></p></li></ol><hr /><h2 id='rq-6'><span>RQ 6</span></h2><figure class='table-figure'><table><thead><tr><th><span>Category</span></th><th><span>Papers</span></th><th><span>Count</span></th></tr></thead><tbody><tr><td><span>Performance Improvement and Future Research Directions</span></td><td><span>[1], [2], [3], [12], [15]</span></td><td><span>5</span></td></tr><tr><td><span>Challenges and Strategies for Improvement</span></td><td><span>[4], [9], [10], [11], [14]</span></td><td><span>5</span></td></tr><tr><td><span>Impact and Potential Applications</span></td><td><span>[6], [8], [13]</span></td><td><span>3</span></td></tr><tr><td><span>Feasibility and Effectiveness</span></td><td><span>[7]</span></td><td><span>1</span></td></tr><tr><td><span>Productivity and User Experience</span></td><td><span>[13], [16]</span></td><td><span>2</span></td></tr><tr><td><span>Improvement in Automation and Documentation</span></td><td><span>[17], [18]</span></td><td><span>2</span></td></tr><tr><td><span>Specific Domain Applications</span></td><td><span>[5], [19]</span></td><td><span>2</span></td></tr></tbody></table></figure><ol start='' ><li><p><strong><span>性能改进和未来研究方向 (Performance Improvement and Future Research Directions)</span></strong><span>：关注LLM在代码生成方面的性能改善，并讨论了未来的研究方向。</span></p></li><li><p><strong><span>挑战与改进策略 (Challenges and Strategies for Improvement)</span></strong><span>：识别了在应用LLM进行代码生成时遇到的主要挑战，并提出了相应的解决策略。</span></p></li><li><p><strong><span>影响及潜在应用 (Impact and Potential Applications)</span></strong><span>：探讨了LLM在软件开发中的实际影响和潜在应用，如何改变现有的软件开发实践。</span></p></li><li><p><strong><span>可行性和有效性 (Feasibility and Effectiveness)</span></strong><span>：评估了采用LLM技术的可行性和在实际场景中的有效性。</span></p></li><li><p><strong><span>生产力和用户体验 (Productivity and User Experience)</span></strong><span>：研究了LLM如何提高软件开发的生产力并改善用户体验，尤其是在开发过程中的实用性。</span></p></li><li><p><strong><span>自动化和文档改进 (Improvement in Automation and Documentation)</span></strong><span>：探索了LLM在自动化任务，特别是在自动生成文档方面的能力和改进。</span></p></li><li><p><strong><span>特定领域应用 (Specific Domain Applications)</span></strong><span>：讨论了LLM在特定领域（如医疗、金融）的应用案例，展示了这些模型跨行业的适应性和潜力。</span></p></li></ol></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script></body>
+</html>
