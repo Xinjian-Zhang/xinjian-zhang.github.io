@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xinjian Zhang's Profile</title>
+    <title>Xinjian Zhang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
@@ -120,29 +121,21 @@
             position: absolute;
             cursor: pointer;
             transition: background-color 200ms ease;
-           
-            left:120px;
-            
-
-
+            left: 120px;
         }
-        .toggle-switch:before {
-            content: "";
+        .toggle-switch .toggle-icon {
             position: absolute;
-            width: 26px;
-            height: 26px;
-            background-color: white;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 20px;
             transition: transform 200ms ease;
-
-        }
-        .toggle-switch.dark:before {
-            transform: translateX(30px);
         }
         .toggle-switch.dark {
             background-color: #666;
+        }
+        .toggle-switch.dark .toggle-icon {
+            transform: translate(30px, -50%);
         }
     </style>
     <script>
@@ -181,12 +174,17 @@
         function toggleDarkMode() {
             let body = document.body;
             let toggleSwitch = document.getElementById("toggleSwitch");
+            let icon = toggleSwitch.querySelector(".toggle-icon");
             if (body.classList.contains("dark")) {
                 body.classList.remove("dark");
                 toggleSwitch.classList.remove("dark");
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun");
             } else {
                 body.classList.add("dark");
                 toggleSwitch.classList.add("dark");
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon");
             }
         }
     </script>
@@ -202,7 +200,9 @@
     </div>
     <div class="top-bar">
         Dark/Light
-        <div id="toggleSwitch" class="toggle-switch" onclick="toggleDarkMode()"></div></a>
+        <div id="toggleSwitch" class="toggle-switch" onclick="toggleDarkMode()">
+            <i class="toggle-icon fas fa-sun"></i>
+        </div>
     </div>
     <div class="profile-container">
         <div class="cv-container">
@@ -333,7 +333,7 @@
         </button>
     </div>
     <div class="copyright">
-        <p>© 2023 Xinjian Zhang. All rights reserved.</p>
+        <p>© 2024 Xinjian Zhang. All rights reserved.</p>
     </div>
 </body>
 </html>
