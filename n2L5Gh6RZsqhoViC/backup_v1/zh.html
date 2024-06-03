@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>张新健CV</title>
+  <style>
+    body {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+      background: url(static/background.jpg) no-repeat center center fixed; 
+      background-size: cover;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 10px 20px;
+    }
+  
+    .left-side, .right-side a {
+      color: white;
+      text-decoration: none;
+    }
+  
+    .right-side a:hover {
+      text-decoration: underline;
+    }
+  
+    .profile-wrapper {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      margin: 0 20px;
+      padding: 20px;
+    }
+  
+    .profile-container {
+      text-align: left;
+      margin-top: 30px;
+      margin-bottom: 80px;
+      margin-left: 30px;
+      margin-right: 30px;
+      background-color: #ffffff3c;
+      border-radius: 5px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  
+    .profile-image {
+      border-radius: 50%;
+      transform: scale(1);
+      border: 3px solid white;
+      margin-top: 1; 
+      margin-bottom: 1px;
+    }
+  
+    .navigation {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+  
+    .button {
+      margin: 5px;
+    }
+  
+    .button {
+      display: block;
+      font-weight: bold;
+      margin: 5px auto;
+      padding: 10px 20px;
+      background: rgba(26, 153, 237, 0.8);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      width: 100px;
+    }
+  
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      color: #fff;
+      opacity: 1;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 5px;
+    }
+  
+    .h1 {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        background-color: #ffffff31;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 15px;
+        z-index: 99;
+      }
+
+  </style>
+  </head>
+
+  <script>
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      alert('右键已禁用！');
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+        alert('F12已禁用！');
+      }
+    });
+    document.addEventListener('copy', function (e) {
+      e.preventDefault();
+      alert('复制已禁用！');
+    });
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scrollToTopBtn").style.display = "block";
+      } else {
+        document.getElementById("scrollToTopBtn").style.display = "none";
+      }
+    }
+
+
+    function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+  </script>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="left-side">张新健</div>
+    <div class="right-side">
+      <a href="zh">中文</a> |
+      <a href="/">English</a> |
+      <a href="bg">Български</a> |
+
+    </div>
+  </div>
+  
+<div class="profile-container">
+
+  <div class="cv-container">
+    <div class="cv-section">
+      <h1>个人简历</h1>
+
+      <div class="contact-info">
+        <p><strong>姓名：</strong> 张新健</p>
+        <p><strong>电话：</strong> +372-58099350</p>
+        <p><strong>电子邮件：</strong> <a href="mailto:1xinjian.zhang@gmail.com">1xinjian.zhang@gmail.com</a></p>
+        <p><strong>学校邮箱：</strong> <a href="mailto:xinjian.zhang@ut.ee">xinjian.zhang@ut.ee</a></p>
+        <p><strong>领英：</strong> <a href="https://www.linkedin.com/in/xinjian-zhang-677aa92a0/">LinkedIn个人资料</a></p>
+      </div>
+    </div>
+
+    <div class="cv-section education">
+      <h2>教育背景</h2>
+
+      <div class="resume-item">
+        <p><strong>塔尔图大学 & 塔林科技大学</strong></p>
+        <p>软件工程硕士 | 绩点：4.57/5 | 2023年至今，爱沙尼亚</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>兰卡斯特大学 & 北京交通大学</strong></p>
+        <p>计算机科学荣誉学士 & 计算机科学与技术工程学士 | 绩点：3.58/4 | 2019年-2023年，英国，中国</p>
+      </div>
+    </div>
+
+    <div class="cv-section experience">
+      <h2>工作经验</h2>
+
+      <div class="resume-item">
+        <p><strong>独立软件开发者</strong></p>
+        <p>自由职业 | 2022年9月-至今</p>
+        <ul>
+          <li>HTML5前端开发者，注重功能和美观</li>
+          <li>混合移动应用开发，紧跟行业趋势</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <p><strong>独立UI设计师</strong></p>
+        <p>自由职业 | 2022年9月-至今</p>
+        <ul>
+          <li>以用户为中心的UI/UX设计：简约、功能性和视觉吸引力，深刻理解用户需求</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section projects">
+      <h2>项目经验</h2>
+
+      <div class="resume-item">
+        <p><strong>污水处理厂碳排放紧急性研究</strong></p>
+        <p>在碳中和背景下分析污水碳排放紧急性的数学可视化模型 | 2022年4月</p>
+        <ul>
+          <li>环境科学中的污水处理研究</li>
+          <li>使用MATLAB、R和Python进行建模和分析</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <p><strong>基于物联网的健康监测系统</strong></p>
+        <p>Web端和Android端健康监测系统 | 2023年3月</p>
+        <ul>
+          <li>物联网平台：Arduino，ESP8266</li>
+          <li>Web、服务器：Spring Boot，MyBatis和MySQL</li>
+          <li>混合移动应用</li>
+        </ul>
+      </div>
+      <div class "resume-item">
+        <p><strong>爱沙尼亚语翻译和TTS移动应用</strong></p>
+        <p>轻量级混合移动应用 | 2023年8月</p>
+        <ul>
+          <li>HTML5混合开发</li>
+          <li>JSON API</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section skills">
+      <h2>技能</h2>
+
+      <div class="resume-item">
+        <p><strong>主要从事<u>前端开发</u></strong></p>
+        <ul>
+          <li>语言：JavaScript，HTML，CSS，Python，C＃，Java，SQL</li>
+          <li>框架：React.js，Vue.js，Angular, Spring Boot, Redis</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <p><strong>UI设计</strong></p>
+        <ul>
+          <li>设计工具：Photoshop，Illustrator，Sketch，Blender</li>
+          <li>原型设计：Figma，Adobe XD</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section languages">
+      <h2>语言能力</h2>
+
+      <div class="resume-item">
+        <p><strong>中文：</strong> 母语</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>英语：</strong> C1（学术雅思7.0）</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>保加利亚语：</strong> 中级</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>日语：</strong> 初级（JLPT N5）</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>爱沙尼亚语：</strong> 初级</p>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+    <span>返回顶部</span>
+  </button>
+  
+</div>
+  <div class="copyright">
+    <p>© 2023 张新健 保留所有权利</p>
+  </div>
+</body>
+</html>

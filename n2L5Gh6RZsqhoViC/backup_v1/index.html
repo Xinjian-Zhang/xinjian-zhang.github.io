@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhang Xinjian's Profile</title>
+    <style>
+      body {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+        background: url(static/background.jpg) no-repeat center center fixed; 
+        background-size: cover;
+      }
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px 20px;
+      }
+    
+      .left-side, .right-side a {
+        color: white;
+        text-decoration: none;
+      }
+    
+      .right-side a:hover {
+        text-decoration: underline;
+      }
+    
+      .profile-wrapper {
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        margin: 0 20px;
+        padding: 20px;
+      }
+    
+      .profile-container {
+        text-align: left;
+        margin-top: 30px;
+        margin-bottom: 80px;
+        margin-left: 30px;
+        margin-right: 30px;
+        background-color: #ffffff3c;
+        border-radius: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    
+      .profile-image {
+        border-radius: 50%;
+        transform: scale(1);
+        border: 3px solid white;
+        margin-top: 1; 
+        margin-bottom: 1px;
+      }
+    
+      .navigation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+    
+      .button {
+        margin: 5px;
+      }
+    
+      .button {
+        display: block;
+        font-weight: bold;
+        margin: 5px auto;
+        padding: 10px 20px;
+        background: rgba(26, 153, 237, 0.8);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 100px;
+      }
+    
+      .copyright {
+        text-align: center;
+        margin-top: 50px;
+        color: #fff;
+        opacity: 1;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 5px;
+      }
+    
+      .h1 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 70px;
+        right: 20px;
+        background-color: #ffffff31;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 15px;
+        z-index: 99;
+      }
+
+    </style>
+    </head>
+
+  <script>
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+      alert('Right click is disabled!');
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+        alert('F12 is disabled!');
+      }
+    });
+    document.addEventListener('copy', function (e) {
+      e.preventDefault();
+      alert('Copying is disabled!');
+    });
+
+
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("scrollToTopBtn").style.display = "block";
+      } else {
+        document.getElementById("scrollToTopBtn").style.display = "none";
+      }
+    }
+
+
+    function scrollToTop() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+
+  </script>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="left-side">Xinjian Zhang</div>
+    <div class="right-side">
+      <a href="zh">中文</a> |
+      <a href="/">English</a> |
+      <a href="bg">Български</a> |
+    </div>
+  </div>
+  
+<div class="profile-container">
+
+  <div class="cv-container">
+    <div class="cv-section">
+      <h1>Curriculum Vitae</h1>
+
+      <div class="contact-info">
+        <p><strong>Name:</strong> Xinjian Zhang</p>
+        <p><strong>Phone:</strong> +372-58099350</p>
+        <p><strong>Email:</strong> <a href="mailto:1xinjian.zhang@gmail.com">1xinjian.zhang@gmail.com</a></p>
+        <p><strong>University Email:</strong> <a href="mailto:xinjian.zhang@ut.ee">xinjian.zhang@ut.ee</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/xinjian-zhang-677aa92a0/">LinkedIn Profile</a></p>
+      </div>
+    </div>
+
+    <div class="cv-section education">
+      <h2>Education</h2>
+
+      <div class="resume-item">
+        <p><strong>University of Tartu & Tallinn University of Technology</strong></p>
+        <p>MSc Software Engineering | CGPA: 4.57/5 | 2023-Present, Estonia</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>Lancaster University & Beijing Jiaotong University</strong></p>
+        <p>BSc Hons Computer Science & BEng Computer Science and Technology | CGPA: 3.58/4 | 2019-2023, UK, China</p>
+      </div>
+    </div>
+
+    <div class="cv-section experience">
+      <h2>Experience</h2>
+
+      <div class="resume-item">
+        <p><strong>Independent Software Developer</strong></p>
+        <p>Freelance | 09.2022-Present</p>
+        <ul>
+          <li>Front-end development specialist in HTML5, prioritizing functionality and aesthetics.</li>
+          <li>Hybrid mobile app development, staying current with industry trends.</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <p><strong>Independent UI Designer</strong></p>
+        <p>Freelance | 09.2022-Present</p>
+        <ul>
+          <li>User-centric UI/UX designs: Simplicity, functionality, and visual appeal driven by deep user understanding.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section projects">
+      <h2>Projects</h2>
+
+      <div class="resume-item">
+        <p><strong>Research on the Urgency of Carbon Emission Issues from Sewage Plants</strong></p>
+        <p>Mathematical visualization model analyzes the urgency of sewage carbon emissions in the context of carbon neutrality | 04.2022</p>
+        <ul>
+          <li>Sewage treatment research in environmental science.</li>
+          <li>Modeling and analysis using MATLAB, R, and Python.</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <p><strong>IoT-Based Health Monitoring System</strong></p>
+        <p>A Web-end and Android-end health monitoring system | 03.2023</p>
+        <ul>
+          <li>IoT Platform: Arduino, ESP8266.</li>
+          <li>Web, Server: Spring Boot, MyBatis, and MySQL.</li>
+          <li>Hybrid Mobile App.</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <p><strong>Estonian Translate and TTS Mobile App</strong></p>
+        <p>Lightweight hybrid mobile Apps | 08.2023</p>
+        <ul>
+          <li>HTML5 Hybrid Development.</li>
+          <li>JSON API.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section skills">
+      <h2>Skills</h2>
+
+      <div class="resume-item">
+        <p><strong>Mainly at <u>Front-end Development</u></strong></p>
+        <ul>
+          <li>Languages: JavaScript, HTML, CSS, Python, C#, Java, SQL.</li>
+          <li>Frameworks: React.js, Vue.js, Angular, Spring Boot, Redis.</li>
+        </ul>
+      </div>
+      <div class="resume-item">
+        <p><strong>UI Design</strong></p>
+        <ul>
+          <li>Design Tools: Photoshop, Illustrator, Sketch, Blender.</li>
+          <li>Prototyping: Figma, Adobe XD.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section languages">
+      <h2>Languages</h2>
+
+      <div class="resume-item">
+        <p><strong>Chinese:</strong> Native Language</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>English:</strong> C1 (IELTS Academic 7.0)</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>Bulgarian:</strong> Intermediate</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>Japanese:</strong> Elementary (JLPT N5)</p>
+      </div>
+      <div class="resume-item">
+        <p><strong>Estonian:</strong> Elementary</p>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+    <span>Back to Top</span>
+  </button>
+  
+</div>
+  <div class="copyright">
+    <p>© 2023 Xinjian Zhang. All rights reserved.</p>
+  </div>
+</body>
+</html>
