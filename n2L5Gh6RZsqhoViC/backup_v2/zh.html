@@ -47,20 +47,6 @@
             padding-top: 20px;
             padding-bottom: 20px;
         }
-
-        .download-container {
-            text-align: left;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-left: 30px;
-            margin-right: 30px;
-            background-color: rgba(197, 143, 185, 0.5);
-            border-radius: 5px;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
         .profile-image {
             border-radius: 50%;
             transform: scale(1);
@@ -155,19 +141,19 @@
     <script>
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
-            alert('Right click is disabled!');
+            alert('右键被禁用！');
         });
 
         document.addEventListener('keydown', function (e) {
             if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
                 e.preventDefault();
-                alert('F12 is disabled!');
+                alert('F12被禁用！');
             }
         });
 
         document.addEventListener('copy', function (e) {
             e.preventDefault();
-            alert('Copying is disabled!');
+            alert('复制被禁用！');
         });
 
         window.onscroll = function() {scrollFunction()};
@@ -209,37 +195,146 @@
         <div class="right-side">
             <a href="zh">中文</a> |
             <a href="/">English</a> |
-            <a href="tr">Türkçe</a>
+            <a href="bg">Български</a>
         </div>
     </div>
     <div class="top-bar">
-        暗黑/明亮
+        深色/浅色
         <div id="toggleSwitch" class="toggle-switch" onclick="toggleDarkMode()">
             <i class="toggle-icon fas fa-sun"></i>
         </div>
     </div>
-
-    
-
     <div class="profile-container">
+        <div class="cv-container">
+            <div class="cv-section">
+                <h1>张新健</h1>
+
+                <div class="contact-info">
+                    <p><strong>电话:</strong> +372-58099350</p>
+                    <p><strong>邮箱:</strong> <a href="mailto:1xinjian.zhang@gmail.com">1xinjian.zhang@gmail.com</a></p>
+                    <p><strong>领英:</strong> <a href="https://www.linkedin.com/in/xinjian-zhang-677aa92a0/">领英简介</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/Xinjian-Zhang">GitHub 仓库</a></p>
+                </div>
+            </div>
+
+            <div class="cv-section education">
+                <h2>教育背景</h2>
+
+                <div class="resume-item">
+                    <p><strong>塔尔图大学 & 塔林理工大学</strong></p>
+                    <p>软件工程硕士 | GPA: 4.5/5 | 2023-至今，爱沙尼亚</p>
+                </div>
+                <div class="resume-item">
+                    <p><strong>兰卡斯特大学 & 北京交通大学</strong></p>
+                    <p>计算机科学学士（荣誉） & 计算机科学与技术学士 | GPA: 3.58/4 | 2019-2023，英国，中国</p>
+                </div>
+            </div>
+
+            <div class="cv-section experience">
+                <h2>工作经验</h2>
+
+                <div class="resume-item">
+                    <p><strong>独立软件开发者，UI 设计师</strong></p>
+                    <p>2022年7月 – 2023年9月</p>
+                    <ul>
+                        <li>专注于 HTML5、JavaScript、Python 和 Ruby 的开发</li>
+                        <li>混合移动应用开发，优先考虑功能性和美观性</li>
+                        <li>以用户为中心的 UI/UX 设计，强调简洁、功能性和视觉吸引力</li>
+                    </ul>
 
 
-            <div class="Info">
+                </div>
+            </div>
 
-            <h2>你好</h2>
-            <p style="font-family: Arial, sans-serif; font-size: 12px; text-align: left;">
-                当前，该网站正在维护。
-                <br><br>
-                请联系 <a href="mailto:1xinjian.zhang@gmail.com">1xinjian.zhang@gmail.com</a></p>
+            <div class="cv-section projects">
+                <h2>项目</h2>
 
+                <div class="resume-item">
+                    <p><strong>污水处理厂碳排放问题紧迫性的研究</strong></p>
+                    <p>2022年4月</p>
+                    <ul>
+                        <li>通过量化和可视化预测模型分析污水碳排放中的碳中和情况</li>
+                        <li>使用 MATLAB、Python、回归分析、Power BI</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <p><strong>数据库备份和管理系统</strong></p>
+                    <p>2022年8月</p>
+                    <ul>
+                        <li>综合数据库管理系统，以便高效备份和恢复 SQLite 数据库</li>
+                        <li>使用 Java、JDBC、SQLite、文件 I/O 操作、数据库元数据</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <p><strong>基于物联网的健康监测系统</strong></p>
+                    <p>2023年3月</p>
+                    <ul>
+                        <li>网页端和安卓端健康监测系统</li>
+                        <li>使用 Arduino、ESP8266、Web Socket、Spring Boot、MyBatis、MySQL、混合应用、HTML5、Node.js</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <p><strong>用于医学图像分析的 3D 卷积神经网络</strong></p>
+                    <p>2023年8月</p>
+                    <ul>
+                        <li>基于 Keras 和 TensorFlow 开发的 3D CNN 模型，用于分类和分割医学影像数据</li>
+                        <li>实现了自定义数据管道和高级神经网络架构</li>
+                        <li>GPU 加速和健壮的评估指标</li>
+                        <li>使用 Python、NumPy、Pandas、Keras、TensorFlow、PyTorch、Matplotlib、Scikit-learn、CUDA</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section skills">
+                <h2>技能</h2>
+
+                <div class="resume-item">
+                    <p><strong>软件开发</strong></p>
+                    <ul>
+                        <li>JavaScript、HTML、CSS、Python、C#、Java、Ruby、Node.js、React、Vue.js、AngularJS、Express.js、Rails、Spring Boot</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <p><strong>数据、建模、分析/管理</strong></p>
+                    <ul>
+                        <li>MS Excel、R、SQL、MATLAB、UML、BPMN、数据分析、业务流程管理、软件产品管理、需求工程、A/B 测试</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <p><strong>UI/UX</strong></p>
+                    <ul>
+                        <li>Photoshop、Sketch、Figma</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-section languages">
+                <h2>语言</h2>
+
+                <div class="resume-item">
+                    <p><strong>中文:</strong> 母语</p>
+                </div>
+                <div class="resume-item">
+                    <p><strong>英文:</strong> C1 (雅思学术 7.0)</p>
+                </div>
+                <div class="resume-item">
+                    <p><strong>保加利亚语:</strong> 中级</p>
+                </div>
+                <div class="resume-item">
+                    <p><strong>日语:</strong> 初级 (JLPT N5)</p>
+                </div>
+                <div class="resume-item">
+                    <p><strong>爱沙尼亚语:</strong> 初级</p>
+                </div>
+            </div>
         </div>
 
-        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
-            <span>回到顶部</span>
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="返回顶部">
+            <span>返回顶部</span>
         </button>
     </div>
     <div class="copyright">
-        <p>© 2024 Xinjian Zhang. All rights reserved.</p>
+        <p>© 2024 张新健 版权所有</p>
     </div>
 </body>
 </html>
