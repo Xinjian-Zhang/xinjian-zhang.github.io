@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Image Navigation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .container {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        .active {
+            display: block;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .clickable {
+            position: absolute;
+            cursor: pointer;
+        }
+        /* Specific positions for the clickable areas */
+        #first-image .gray-card {
+            top: 40%;
+            left: 5%;
+            width: 35%;
+            height: 20%;
+        }
+        #second-image .back-button {
+            top: 3%;
+            left: 3%;
+            width: 10%;
+            height: 7%;
+        }
+        #second-image .x-button {
+            top: 3%;
+            right: 3%;
+            width: 10%;
+            height: 7%;
+        }
+    </style>
+</head>
+<body>
+    <div id="first-image" class="container active">
+        <img src="pp01.png" alt="First Image">
+        <div class="clickable gray-card" onclick="showSecondImage()"></div>
+    </div>
+    <div id="second-image" class="container">
+        <img src="pp02.png" alt="Second Image">
+        <div class="clickable back-button" onclick="showFirstImage()"></div>
+        <div class="clickable x-button" onclick="showFirstImage()"></div>
+    </div>
+    <script>
+        function showSecondImage() {
+            document.getElementById('first-image').classList.remove('active');
+            document.getElementById('second-image').classList.add('active');
+        }
+        function showFirstImage() {
+            document.getElementById('second-image').classList.remove('active');
+            document.getElementById('first-image').classList.add('active');
+        }
+    </script>
+</body>
+</html>
