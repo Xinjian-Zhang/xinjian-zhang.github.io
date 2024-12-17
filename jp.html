@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xinjian Zhang</title>
+    <title>張新健</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General styles */
+        /* 一般的なスタイル */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -25,7 +25,7 @@
             text-decoration: underline;
         }
 
-        /* Top Navigation */
+        /* トップナビゲーション */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -49,7 +49,7 @@
             color: lightcoral;
         }
 
-        /* Dark/Light Mode Toggle */
+        /* ダーク/ライトモード切り替え */
         .dark-mode-toggle {
             cursor: pointer;
             display: flex;
@@ -70,7 +70,7 @@
             color: #fff;
         }
 
-        /* Content Styling */
+        /* メインコンテンツ */
         .main-container {
             max-width: 800px;
             margin: 50px auto;
@@ -90,7 +90,7 @@
             line-height: 1.6;
         }
 
-        /* Button Styling */
+        /* ボタンスタイル */
         .button {
             display: inline-block;
             margin-top: 20px;
@@ -107,7 +107,7 @@
             background-color: #005bb5;
         }
 
-        /* Scroll to Top Button */
+        /* トップへ戻るボタン */
         #scrollToTopBtn {
             display: none;
             position: fixed;
@@ -128,7 +128,7 @@
             background-color: #005bb5;
         }
 
-        /* Footer */
+        /* フッター */
         .footer {
             text-align: center;
             margin-top: 50px;
@@ -141,7 +141,7 @@
             bottom: 0;
         }
 
-        /* Dark Mode */
+        /* ダークモード */
         .dark-mode {
             background-color: #333;
             color: white;
@@ -151,7 +151,7 @@
         }
     </style>
     <script>
-        // Scroll to top functionality
+        // トップへ戻る機能
         window.onscroll = function() {
             const scrollBtn = document.getElementById("scrollToTopBtn");
             if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -164,7 +164,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Dark/Light mode toggle
+        // ダーク/ライトモード切り替え
         function toggleDarkMode() {
             const body = document.body;
             body.classList.toggle('dark-mode');
@@ -172,36 +172,36 @@
     </script>
 </head>
 <body>
-    <!-- Top Bar -->
+    <!-- トップバー -->
     <div class="top-bar">
-        <div class="site-title">Xinjian Zhang</div>
+        <div class="site-title">チャン・シンジェン</div>
         <div class="language-links">
             <a href="zh">中文</a>
-            <a href="ja">日本語</a> <!-- Japanese -->
-            <a href="mm">မြန်မာရီ</a> <!-- Burmese -->
+            <a href="ja">日本語</a>
+            <a href="mm">ビルマ語</a>
             <a href="/">English</a>
         </div>
         <div class="dark-mode-toggle" onclick="toggleDarkMode()">
-            <i class="fas fa-adjust"></i> Dark Mode
+            <i class="fas fa-adjust"></i> ダーク/ライトモード
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- メインコンテンツ -->
     <div class="main-container">
-        <h2>Welcome</h2>
-        <p>Currently, the website is under maintenance. If you need assistance, please contact me via email:</p>
+        <h2>ようこそ</h2>
+        <p>現在、ウェブサイトはメンテナンス中です。ご連絡が必要な場合は、メールでお問い合わせください：</p>
         <p><a href="mailto:1xinjian.zhang@gmail.com">1xinjian.zhang@gmail.com</a></p>
-        <button class="button" onclick="location.href='mailto:1xinjian.zhang@gmail.com'">Contact Me</button>
+        <button class="button" onclick="location.href='mailto:1xinjian.zhang@gmail.com'">お問い合わせ</button>
     </div>
 
-    <!-- Scroll to Top Button -->
-    <button onclick="scrollToTop()" id="scrollToTopBtn" title="Go to top">
+    <!-- トップへ戻るボタン -->
+    <button onclick="scrollToTop()" id="scrollToTopBtn" title="トップへ戻る">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Footer -->
+    <!-- フッター -->
     <div class="footer">
-        <p>&copy; 2024 Xinjian Zhang. All rights reserved.</p>
+        <p>&copy; 2024 張新健 すべての権利を保有します。 Xinjian Zhang. All rights reserved.</p>
     </div>
 </body>
 </html>
