@@ -1,0 +1,2470 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+	--text-color: #c8d1d9;
+	--bg-color: #0d1117;
+	--side-bar-bg-color: #0d1117;
+	--control-text-color: #a9aaab;
+	--primary-color: #f9826c;
+	--primary-btn-border-color: #f9826c;
+	--active-file-text-color: inherit;
+	--active-file-border-color: #f9826c;
+	--active-file-bg-color: #0d1117;
+	--primary-btn-text-color: #f9826c;
+	--window-border: 0 solid #0d1117;
+	--item-hover-bg-color: #161b22;
+	--item-hover-text-color: #f9826c;
+	--meta-content-color: #f9826c;
+	--search-select-text-color: #f9826c;
+	--control-text-color: var(--text-color);
+	--control-text-hover-color: var(--text-color);
+	--heading-char-color: #f9826c;
+	--active-toggle-btn-color: #192133;
+	--blur-text-color: rgba(200, 200, 200, 0.33);
+	--rawblock-edit-panel-bd: var(--item-hover-bg-color) !important;
+	--select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+	--select-text-font-color: #fff !important;
+	--color-border-secondary: #21262d !important;
+	--mermaid-node-color: #b87f62 !important;
+	--mermaid-node-border: #bd7958;
+	--mermaid-contrast-color: #afe61d;
+	--mermaid-theme: dark;
+	--monospace: ui-monospace,
+		Menlo, Monaco,
+		"Cascadia Mono", "Segoe UI Mono",
+		"Roboto Mono",
+		"Oxygen Mono",
+		"Ubuntu Monospace",
+		"Source Code Pro",
+		"Fira Mono",
+		"Droid Sans Mono",
+		"Courier New", monospace;
+}
+
+.pane-group {
+	background-color: var(--bg-color);
+}
+
+.dropdown-menu {
+	background-color: var(--bg-color) !important;
+	border: 1px solid var(--item-hover-bg-color) !important;
+	color: #8b949e !important;
+}
+
+.dropdown-menu>li>a {
+	border-left: 1px solid var(--bg-color);
+	border-right: 1px solid var(--bg-color);
+	color: var(--text-color) !important;
+}
+
+.dropdown-menu>li>a:hover {
+	background-color: var(--item-hover-bg-color);
+	border-left: 1px solid var(--bg-color);
+	border-right: 1px solid var(--bg-color);
+	color: var(--text-color) !important;
+}
+
+body {
+	line-height: 1.5;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+}
+
+#write {
+	background-color: var(--bg-color) !important;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+	font-weight: 500;
+	margin-top: 30px;
+}
+
+content {
+	background-color: var(--bg-color) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--text-color);
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 400;
+	padding-top: 5px;
+}
+
+html {
+	font-size: 13px;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+}
+
+#write {
+	text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	position: relative;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-weight: bold;
+	line-height: 1.5;
+	cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+	text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+	font-size: inherit;
+}
+
+h2 tt,
+h2 code {
+	font-size: inherit;
+}
+
+h3 tt,
+h3 code {
+	font-size: inherit;
+}
+
+h4 tt,
+h4 code {
+	font-size: inherit;
+}
+
+h5 tt,
+h5 code {
+	font-size: inherit;
+}
+
+h6 tt,
+h6 code {
+	font-size: inherit;
+}
+
+h1 {
+	font-size: 2.6rem;
+	padding-bottom: .15rem;
+	border-bottom: 1px solid var(--color-border-secondary);
+}
+
+h2 {
+	font-size: 1.9rem;
+	padding-bottom: .15rem;
+	border-bottom: 1px solid var(--color-border-secondary);
+}
+
+h3 {
+	font-size: 1.7rem;
+}
+
+h4 {
+	font-size: 1.4rem;
+}
+
+h5 {
+	font-size: 1.2rem;
+}
+
+h6 {
+	font-size: 1rem;
+	color: rgb(139, 148, 158);
+}
+
+h1.md-focus:before,
+h2.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+	content: '';
+	border: 0;
+}
+
+p {
+	color: var(--text-color);
+	line-height: 1.20rem;
+	margin: 0 0 1.25rem;
+}
+
+kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font: 11px ui-monospace,
+		Menlo, Monaco,
+		"Cascadia Mono", "Segoe UI Mono",
+		"Roboto Mono",
+		"Oxygen Mono",
+		"Ubuntu Monospace",
+		"Source Code Pro",
+		"Fira Mono",
+		"Droid Sans Mono",
+		"Courier New", monospace;
+	line-height: 10px;
+	color: #b1bac4;
+	vertical-align: middle;
+	background-color: var(--bg-color);
+	border-bottom-color: #6e7681;
+	border: 1px solid #6e7681;
+	border-radius: 6px;
+	box-shadow: inset 0 -1px 0 #6e7681;
+}
+
+p {
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
+
+table {
+	font-size: 1.25rem;
+}
+
+
+a,
+.md-def-url {
+	color: #58a6ff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #58a6ff;
+	text-decoration: underline;
+}
+
+/* Summary */
+.md-toc {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.md-toc-content {
+	background-color: var(--item-hover-bg-color) !important;
+	border-radius: 6px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#write div.md-toc-tooltip {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 1px solid var(--item-hover-bg-color);
+	padding-left: 5px;
+	font-size: 1.4rem;
+	color: var(--text-color);
+}
+
+.md-toc:focus .md-toc-content {
+	border: 1px solid var(--item-hover-bg-color);
+}
+
+.md-delete-toc {
+	color: var(--text-color);
+}
+
+table {
+	margin-bottom: 20px;
+	line-height: 24px;
+}
+
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.25rem;
+	vertical-align: middle;
+	border-top: 1px solid #3D454D;
+}
+
+table th {
+	font-weight: 700;
+	padding: 6px 13px;
+}
+
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0;
+}
+
+table tbody+tbody {
+	border-top: 2px solid #3D454D;
+}
+
+table tr th {
+	border: 1px solid #324560;
+	border-bottom: solid 2px #3D454D;
+	border-bottom: 0;
+	font-weight: 700;
+	margin: 0;
+	padding: 10px 16px;
+}
+
+table tr td {
+	background: #192534;
+	border: 1px solid #3D454D;
+	margin: 0;
+	padding: 10px 16px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+	margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+	margin-bottom: 0;
+}
+
+table {
+	padding: 0;
+	word-break: initial;
+}
+
+table tr {
+	border-top: 1px solid #3D454D;
+	margin: 0;
+	padding: 0;
+}
+
+thead {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+table tr th {
+	border: 1px solid #3D454D;
+	border-bottom: solid 2px #ccc;
+	border-bottom: 0;
+	font-weight: 700;
+	margin: 0;
+	padding: 10px 16px;
+}
+
+table tr td {
+	background: #192534;
+	border: 1px solid #3D454D;
+	margin: 0;
+	padding: 10px 16px;
+	line-height: 1.6rem;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+	margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+	margin-bottom: 0;
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(1n) td {
+	background-color: var(--item-hover-bg-color);
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(2n) td {
+	background-color: var(--bg-color);
+}
+
+.md-fences,
+tt {
+	color: var(--item-hover-bg-color);
+	font-size: 1.05rem;
+	font-weight: 500;
+}
+
+code {
+	padding: .18rem .4rem .22rem;
+	margin: 0;
+	font-size: 1.05rem;
+	background-color: #343941;
+	border-radius: 6px;
+	font-family: ui-monospace,
+		Menlo, Monaco,
+		"Cascadia Mono", "Segoe UI Mono",
+		"Roboto Mono",
+		"Oxygen Mono",
+		"Ubuntu Monospace",
+		"Source Code Pro",
+		"Fira Mono",
+		"Droid Sans Mono",
+		"Courier New", monospace;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+.md-fences {
+	margin-bottom: 15px;
+	margin-top: 15px;
+	padding-bottom: 6px;
+	padding-top: 88px;
+	color: var(--text-color);
+}
+
+.file-tree-node {
+	padding-top: 2px;
+}
+
+#write pre.md-meta-block {
+	background-color: var(--item-hover-bg-color);
+	border: 0;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 100%;
+	line-height: 1.45;
+	margin-top: 0 !important;
+	padding: 1rem;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-image>.md-meta {
+	border-radius: 6px;
+	color: inherit;
+	font-size: .9rem;
+	padding: 2px 0 0 4px;
+}
+
+.md-tag {
+	color: #70bfd9;
+	opacity: 1;
+}
+
+.CodeMirror-line {
+	padding-left: 15px;
+}
+
+.code-tooltip {
+	background: var(--item-hover-bg-color);
+	border: 1px solid var(--item-hover-bg-color);
+	box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+	border-radius: 6px;
+}
+
+/* Yellow border when focusing Code block language input */
+.code-tooltip .ty-input {
+	border: 0;
+}
+
+/* Languages suggestions Menu */
+.auto-suggest-container {
+	background-color: var(--item-hover-bg-color);
+	border: 1px solid var(--item-hover-bg-color);
+	color: var(--text-color);
+	border-radius: 6px;
+}
+
+.dropdown-menu {
+	color: #70c0d8;
+	margin-right: 5px;
+}
+
+.md-fences {
+	padding: .3rem;
+	font-size: .9rem;
+	margin-left: .2rem;
+	margin-right: .2rem;
+}
+
+.md-fences {
+	margin: 0 0 20px;
+	font-size: 1.105rem;
+	padding: 0;
+	padding-top: .4rem;
+}
+
+blockquote .md-end-block.md-heading {
+	color: inherit;
+}
+
+blockquote .md-end-block.md-heading:before {
+	content: '' !important;
+}
+
+blockquote {
+	margin: 0 0 1rem;
+	padding: 0 1rem;
+	border-left: .25rem solid #3b434b;
+}
+
+blockquote,
+blockquote p {
+	line-height: 1.5;
+	color: #8b949e;
+}
+
+.MathJax_Display {
+	font-size: 1rem !important;
+	margin-top: .5rem;
+	margin-bottom: 0;
+}
+
+.md-math-block {
+	font-size: 1.4rem;
+}
+
+.md-rawblock-tooltip .md-rawblock-control {
+	background-color: var(--item-hover-bg-color);
+}
+
+/* Edit Math Blocks */
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+	font-size: 1.105rem;
+	background-color: var(--item-hover-bg-color);
+}
+
+.md-rawblock-control .CodeMirror.cm-s-inner {
+	border: 0px;
+}
+
+/* Inline Math Editing */
+.md-inline-math script {
+	color: #f9826c;
+}
+
+.md-math-tex inline-math-svg {
+	font-size: 1.4rem;
+}
+
+.md-rawblock-panel .code-tooltip {
+	border: 0px;
+}
+
+.md-rawblock-input {
+	font-size: 1.105rem;
+}
+
+/* Mathjax edit panel*/
+.md-rawblock-before {
+	border-top-left-radius: 6px;
+}
+
+.md-rawblock-after {
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+/* Inline Math */
+.MathJax_SVG {
+	font-size: 1.4rem;
+}
+
+.MathJax_SVG:focus {
+	outline: none;
+	background-color: transparent;
+}
+
+.md-rawblock>.md-rawblock-container {
+	transition: 0.5s;
+}
+
+.md-rawblock>.md-rawblock-tooltip {
+	transition: 0.5s;
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.md-rawblock:hover>.md-rawblock-tooltip {
+	transition: 0.5s;
+	visibility: visible;
+	opacity: 1;
+	animation: none;
+}
+
+p.mathjax-block,
+.mathjax-block {
+	padding-bottom: 0;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: 5px;
+	box-shadow: none;
+}
+
+.md-image>.md-meta {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.md-image>img {
+	margin-top: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.md-image>.md-meta:first-of-type:before {
+	padding-left: 4px;
+}
+
+#typora-source {
+	color: var(--text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+	color: var(--text-color);
+	background-color: #484f58;
+}
+
+.md-image-pick-file-btn,
+.md-image-input-src-btn {
+	background-color: var(--item-hover-bg-color);
+}
+
+.md-image-btn.selected,
+.md-image-btn:hover,
+.md-image-pick-file-btn:hover,
+.md-image-input-src-btn:hover {
+	color: #f9826c !important;
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+.searchpanel-search-option-btn {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 1px solid #30363d;
+}
+
+.searchpanel-search-option-btn.active {
+	color: #ddd;
+	border: 1px solid #8b949e;
+}
+
+.searchpanel-search-option-btn:hover {
+	border: 1px solid #8b949e;
+}
+
+#md-searchpanel {
+	border-bottom: 0 solid #324560;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+}
+
+#md-searchpanel input {
+	background-color: #21262d !important;
+	border: 1px solid #30363d;
+}
+
+#md-searchpanel .btn {
+	font-size: 11px;
+}
+
+#md-searchpanel .btn:hover {
+	color: #8b949e;
+}
+
+#md-notification:before {
+	top: 13px;
+}
+
+#md-notification {
+	background: var(--bg-color);
+	font-size: 13px;
+	border-bottom: 0;
+}
+
+#md-notification .ty-enter-mode-warning-header {
+	color: #f9826c;
+}
+
+#md-notification p,
+#md-notification .btn,
+#md-notification label {
+	font-size: 13px !important;
+}
+
+.megamenu-menu-panel .btn {
+	border: 1px solid #ccc;
+}
+
+.on-focus-mode blockquote {
+	border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+}
+
+.megamenu-opened header {
+	background-image: none;
+}
+
+.file-node-content .fa-caret-right,
+.file-node-content .fa-caret-down {
+	color: #f9826c;
+}
+
+.file-node-title {
+	color: var(--text-color);
+}
+
+.active-tab-files {
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+	background-color: var(--item-hover-bg-color) !important;
+	border-top: 0 solid #090b10;
+}
+
+.sidebar-tabs {
+	border-bottom: 0;
+}
+
+.megamenu-menu-header {
+	border-bottom: 1px solid #090b10;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+	background: var(--item-hover-bg-color) !important;
+}
+
+.file-node-open-state {
+	background-color: transparent !important;
+}
+
+.mac-seamless-mode #typora-sidebar {
+	background-color: var(--item-hover-bg-color);
+	border-right: 0 solid #090c12;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+}
+
+titlebar {
+	background-color: var(--bg-color);
+}
+
+/* Sidebar header on Win/Linux (Files/Plan) */
+.info-panel-tab-title {
+}
+
+/* Plan should get the same sidebar background color on Win/Linux */
+.typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) #typora-sidebar {
+	background-color: var(--item-hover-bg-color)
+}
+
+/* Bottom border on Win/Linux Sidebar */
+.info-panel-tab-border {
+	background-color: #f9826c !important;
+}
+
+.sidebar-footer-item:hover {
+	background-color: inherit;
+}
+
+.sidebar-tab.active {
+	color: var(--text-color);
+	font-weight: 700;
+}
+
+.file-node-icon,
+.file-node-open-state {
+	color: #6E7681;
+}
+
+.fa-file-text-o:before {
+	color: var(--text-color) !important;
+}
+
+.md-lang {
+	color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+	--item-hover-bg-color: var(--bg-color);
+	color: #efb752;
+}
+
+hr {
+	background-color: #30363d;
+	border: 0 none;
+	box-sizing: content-box;
+	height: 0.25rem;
+	margin: 16px 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+input {
+	color: #82bed6;
+}
+
+#searchpanel-word-option-btn,
+#find-and-replace-icon-word,
+#find-and-replace-icon-case,
+.searchpanel-search-option-btn,
+.icon,
+.glyphicon .popover,
+.popover-title {
+	color: #82bed6 !important;
+	fill: #82bed6 !important;
+}
+
+#md-notification .btn {
+	border: 0;
+}
+
+.show-word-count #footer-word-count {
+	background: #000;
+}
+
+#recent-file-panel-action-btn {
+	background-color: #82bed6;
+}
+
+.dropdown-menu .divider {
+	border-color: #303d50;
+}
+
+.ty-preferences .window-content {
+	background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+
+/* Code block */
+.cm-s-inner {
+	border: 1px solid #324560;
+	border-radius: 6px;
+	padding: 1.2rem 1rem;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+	color: #d2a8ff;
+}
+
+.cm-s-inner .cm-header {
+	color: #d2a8ff;
+}
+
+.cm-s-inner.CodeMirror,
+.cm-s-inner .CodeMirror-gutters {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 1px solid var(--item-hover-bg-color);
+}
+
+.cm-s-inner .CodeMirror-gutters {
+	border: 0;
+	color: #6d8a88;
+}
+
+#typora-source .CodeMirror-gutter-wrapper {
+	font-size: 1rem;
+}
+
+/* Code block in Source Mode. If activated, borders are nicer but displayed funny when stacked
+#typora-source .cm-s-inner {
+border-radius: 6px;
+}
+*/
+
+.cm-s-inner .CodeMirror-cursor {
+	border-left: solid thin #f8f8f2 !important;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+	color: #6d8a88;
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+	background: rgba(255, 255, 255, .1);
+}
+
+.cm-s-inner span.cm-comment {
+	color: #8b949e;
+	font-style: normal;
+}
+
+.cm-s-inner span.cm-string,
+.cm-s-inner span.cm-string-2,
+.cm-s-inner span.cm-quote {
+	color: #a5d6ff;
+}
+
+.cm-s-inner span.cm-number {
+	color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable {
+	color: var(--text-color);
+}
+
+.cm-s-inner span.cm-variable-2 {
+	color: var(--text-color);
+}
+
+.cm-s-inner span.cm-def {
+	color: var(--text-color);
+}
+
+.cm-s-inner span.cm-operator {
+	color: #ff7b72;
+}
+
+.cm-s-inner span.cm-keyword {
+	color: #ff7b72;
+}
+
+.cm-s-inner span.cm-atom {
+	color: #8b949e;
+}
+
+.cm-s-inner span.cm-meta {
+	color: #8b949e;
+}
+
+.cm-s-inner span.cm-tag {
+	color: #7ee787;
+}
+
+.cm-s-inner span.cm-attribute {
+	color: #79c0ff;
+}
+
+.cm-s-inner span.cm-defined {
+	color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-qualifier {
+	color: #50fa7b;
+}
+
+.cm-s-inner span.cm-property {
+	color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-builtin {
+	color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable-3 {
+	color: #ff7b72;
+}
+
+.cm-s-inner span.cm-block-start {
+	color: #ffa657;
+}
+
+.cm-s-inner span.cm-type {
+	color: #ffb86c;
+}
+
+.cm-positive {
+	color: #aff5b4;
+	background-color: #033a16;
+}
+
+.cm-negative {
+	color: #aff5b4;
+	background-color: #67060c;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+	color: var(--text-color) !important;
+	text-decoration: underline;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext,
+body::selection,
+body::-moz-selection {
+	background: var(--select-text-bg-color) !important;
+	background-color: var(--select-text-bg-color) !important;
+	color: var(--select-text-font-color) !important;
+	text-shadow: none;
+}
+
+#write ol,
+#write ul {
+	font-size: 1.25rem;
+	font-weight: 500;
+	padding-left: 2rem;
+}
+
+/* Code block inside lists */
+#write li .cm-s-inner {
+	font-size: 1.05rem;
+	font-weight: 500;
+	margin-bottom: -0.65rem;
+}
+
+/* Code block inside list with better margins, but it resizes borders and consider all as first-child :(
+#write li .cm-s-inner>:first-child {
+margin-top: 1.2rem;
+}
+
+#write li .cm-s-inner>:last-child {
+margin-bottom: 1.2rem;
+}		
+*/
+
+#write ol>li,
+#write ul>li {
+	font-weight: 500;
+	margin-bottom: 0;
+}
+
+#write ul>li ul>li {
+	list-style-type: circle;
+	background-color: transparent;
+	font-weight: 500;
+}
+
+#write ul>li ul>li ul>li {
+	list-style-type: square;
+	font-weight: 500;
+}
+
+#write ol>li ol>li {
+	list-style-type: lower-roman;
+}
+
+#write ol>li ol>li ol>li {
+	list-style-type: lower-latin;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+	font-weight: 500;
+}
+
+#write ol>li>*:not(ol):not(ul),
+#write ul>li>*:not(ol):not(ul) {
+	font-weight: 500;
+	padding-left: 0.25rem;
+}
+
+#write ul {
+	font-weight: 500;
+	list-style-type: disc;
+}
+
+ul:first-child,
+ol:first-child {
+	font-weight: 500;
+	margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+	font-weight: 500;
+	margin-top: 0;
+}
+
+sup.md-footnote {
+	background-color: rgba(56, 139, 253, 0.1);
+	color: #58a6ff;
+	font-weight: 700;
+	font-size: 75%;
+	font-style: normal;
+}
+
+sup.md-footnote a {
+	font-style: normal;
+}
+
+sup.md-footnote:hover {
+	background-color: rgba(56, 139, 253, 0.15);
+}
+
+sup.md-footnote .md-meta {
+	color: #58a6ff;
+}
+
+.md-def-footnote .md-def-name:before,
+.md-def-footnote .md-def-name:after {
+	content: '';
+}
+
+.md-def-footnote .md-def-name {
+	padding: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	background-color: rgba(56, 139, 253, 0.1);
+	color: #58a6ff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.footnotes {
+	opacity: 1;
+}
+
+.md-def-footnote .md-def-content {
+	font-size: 15px;
+}
+
+a.reversefootnote {
+	color: #f9826c;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+mark {
+	background-color: #2ea44f;
+	border-radius: 6px;
+	color: white;
+	line-height: 2;
+	padding: 5px 10px;
+	white-space: nowrap;
+}
+
+.cm-s-typora-default {
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 500;
+	font-size: 13px;
+	color: var(--text-color);
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+	color: var(--text-color);
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+	color: #8b949e;
+}
+
+.cm-s-typora-default .cm-string {
+	color: #a5d6ff;
+}
+
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+	color: #8b949e;
+	font-style: italic;
+}
+
+.cm-s-typora-default .cm-link,
+.cm-s-typora-default .cm-tag {
+	color: rgb(165, 214, 255);
+}
+
+.cm-s-typora-default .cm-string {
+	color: #f0b752;
+}
+
+.cm-s-typora-default pre.cm-s-inner {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 1px solid var(--item-hover-bg-color);
+	color: var(--text-color);
+	font-size: 0.9rem;
+}
+
+.cm-s-typora-default .cm-atom {
+	color: #8b949e;
+}
+
+.CodeMirror-activeline .cm-atom {
+	color: var(--text-color) !important;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+	background: #484f58;
+}
+
+.cm-s-typora-default .cm-comment,
+.cm-s-typora-default .cm-code {
+	color: #8aa1e1;
+	font-size: 0.9rem !important;
+}
+
+/* Mega menu */
+.megamenu-content,
+.megamenu-opened header {
+	background: var(--bg-color1);
+}
+
+.megamenu-content {
+	display: block;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.megamenu-menu-list {
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+.megamenu-opened .megamenu-content {
+	visibility: visible;
+	opacity: 1;
+	animation: none;
+	background-color: inherit;
+}
+
+/* Mega menu sidebar */
+.megamenu-menu {
+	background-color: var(--item-hover-bg-color);
+}
+
+/* Return button in mega menu */
+#megamenu-menu-sidebar .menu-style-btn {
+	border: 0px;
+}
+
+/* Remove divider in mega menu */
+.megamenu-menu-header {}
+
+/* Return button color in mega menu */
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header #megamenu-menu-header-title:before {
+	color: var(--text-color);
+}
+
+.megamenu-menu-list li a:hover,
+.megamenu-menu-list li a.active {
+	background-color: var(--bg-color);
+}
+
+/* Return button hover in mega menu */
+.megamenu-menu-header:hover {}
+
+/* Return button hover in mega menu */
+.megamenu-menu-header:hover #megamenu-menu-header-title {}
+
+/* Long button in mega menu */
+.long-btn {
+	border: 0px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+	margin-bottom: 10px;
+	margin-left: 10px;
+	background-color: var(--item-hover-bg-color);
+}
+
+.long-btn:hover {
+	background-color: var(--item-hover-bg-color);
+	border-color: 1px solid #8b949e;
+	color: var(--text-color) !important;
+}
+
+
+#recent-file-panel-action-btn {
+	background-color: var(--item-hover-bg-color);
+	border: 0px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+/* Mermaid Diagrams */
+
+.titleText,
+.pieTitleText {
+	fill: var(--mermaid-contrast-color);
+	font-size: 2rem;
+	font-family: system-ui,
+		-apple-system, BlinkMacSystemFont,
+		"Segoe UI",
+		"Roboto",
+		"Oxygen",
+		"Ubuntu",
+		"Cantarell",
+		"Fira Sans",
+		"Droid Sans",
+		"Helvetica Neue",
+		Arial, sans-serif;
+	font-weight: 300;
+}
+
+/* Node text */
+.grid .tick text,
+.taskText,
+text.actor,
+.node .label,
+.taskTextOutsideRight,
+.taskTextOutsideLeft,
+.labelText,
+.loopText,
+g.classGroup text {
+	color: var(--text-color);
+	fill: var(--text-color);
+	stroke: black;
+	stroke-width: 0.05px;
+	
+	.title {
+		font-weight: 600;
+	}
+}
+
+/* Node color */
+.actor,
+.task,
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+g.classGroup rect,
+.labelBox {
+	fill: var(--mermaid-node-color);
+	stroke: var(--mermaid-node-border);
+	color: var(--text-color);
+}
+
+/* Node Labels (Notes & On path) */
+.edgeLabel foreignObject {
+	color: black;
+	background-color: var(--primary-color);
+	stroke: var(--primary-btn-border-color);
+	stroke-width: 1px;
+	height: 20px;
+	text-align: center;
+}
+
+.note {
+	fill: var(--primary-color);
+	stroke: var(--primary-btn-border-color);
+}
+
+.noteText {
+	color: black;
+}
+
+.noteText>tspan {
+	fill: #333 !important;
+	color: #333 !important;
+}
+
+.taskText {
+	fill: white !important;
+}
+
+/* Class diagram specific */
+g.classGroup line {
+	stroke: var(--text-color);
+}
+
+.classLabel .box {
+	stroke: none;
+	stroke-width: 0;
+	fill: var(--primary-color);
+	opacity: 1;
+}
+
+svg[id^="mermaidChart"] .composition,
+svg[id^="mermaidChart"] .aggregation,
+svg[id^="mermaidChart"] .dependency,
+svg[id^="mermaidChart"] .relation {
+	stroke: var(--text-color);
+}
+
+.classLabel .label {
+	fill: black;
+}
+
+#extensionStart,
+#extensionEnd,
+#compositionStart,
+#compositionEnd,
+#aggregationStart,
+#aggregationEnd,
+#dependencyStart,
+#dependencyEnd {
+	fill: var(--text-color);
+	stroke: var(--text-color);
+}
+
+/* Gantt Specific */
+svg[id^="mermaidChart"] .today {
+	stroke: var(--mermaid-contrast-color);
+}
+
+/* Pie Chart Specific */
+
+svg[id^="mermaidChart"] g path {
+	stroke: var(--text-color);
+}
+
+text.slice {
+	fill: var(--text-color);
+}
+
+.legend text {
+	fill: var(--text-color);
+}
+
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+	fill: var(--text-color) !important;
+	stroke: var(--text-color) !important;
+}
+
+/* End mermaid */
+
+/* Tip when hover on a button */
+#ty-tooltip {
+	background-color: black;
+	color: white;
+}
+
+/* Header in setting */
+.window-header {}
+
+/* Sidebar in setting */
+.sidebar {
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+.list-group-content {
+	margin-left: 10px !important;
+}
+
+/* Sidebar button in setting menu */
+.nav-group-item {
+	color: var(--text-color) !important;
+	border-top-left-radius: 6px !important;
+	border-bottom-left-radius: 6px !important;
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+
+/* Sidebar button hover in setting menu */
+.nav-group-item:hover,
+.nav-group-item:active,
+.nav-group-item.active {
+	background-color: #0d1117 !important;
+	color: var(--text-color) !important;
+}
+
+/* The indent example in setting.editor */
+div.pane>div:nth-child(4)>div:nth-child(2) .label-input-group td:last-child div {
+	border: 1px solid #30363d !important;
+	border-radius: 6px;
+	background-color: var(--color-border-secondary);
+	margin: 10px !important;
+}
+
+/* Button in setting menu */
+.ty-preferences button.btn-default {
+	border: 1px solid #30363d;
+	background-color: var(--color-border-secondary);
+	border-radius: 6px;
+}
+
+/* Button hover in setting menu */
+.ty-preferences .btn-default:not([disabled]):hover {
+	border-color: #8b949e !important;
+	background-color: var(--color-border-secondary) !important;
+}
+
+/* Return button in setting menu */
+.window-header button:hover {
+	color: var(--text-color) !important;
+}
+
+/* Search input in setting menu */
+.search-input {
+	border: 1px solid #30363d;
+	border-top-left-radius: 6px !important;
+	border-bottom-left-radius: 6px !important;
+	border-top-right-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+	margin-left: 10px !important;
+}
+
+.search-input:hover {
+	border: 1px solid #8b949e;
+}
+
+.search-input:focus {
+	border: none !important;
+}
+
+/* Select item (mostly in setting menu) */
+select {
+	border: 1px solid #30363d;
+	border-radius: 6px;
+	background-color: var(--color-border-secondary) !important;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+}
+
+/* Enabled select item hover */
+select:not([disabled]):hover {
+	color: var(--text-color);
+	opacity: 1;
+	border: 1px solid #8b949e;
+}
+
+/* Disabled select item hover */
+select[disabled]:hover {
+	opacity: 0.5;
+	border: 1px solid #8b949e;
+}
+
+/* Radio */
+input[type="radio"] {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 0px !important;
+}
+
+input[type="radio"]:before {
+	content: "";
+	display: inline-block;
+	width: 1.1rem;
+	height: 1.1rem;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #30363d;
+	border-radius: 0.55rem;
+	background-color: var(--item-hover-bg-color) !important;
+	margin-top: -0.5rem;
+	margin-left: -0.1rem;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Radio hover */
+input[type="radio"]:not([disabled]):not(:checked):hover:before {
+	content: "\25CF";
+	font-size: 1rem;
+	line-height: 1rem;
+	color: var(--text-color);
+}
+
+/* Radio checked */
+input[type="radio"]:checked:before {
+	content: "\25CF";
+	font-size: 1rem;
+	line-height: 1rem;
+	color: var(--text-color);
+	background-color: var(--item-hover-bg-color) !important;
+}
+
+/* Remove up and down button from number type input */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none !important;
+}
+
+input {
+	background-color: var(--item-hover-bg-color) !important;
+	border: 0px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Checkbox */
+input[type="checkbox"]:before {
+	content: "";
+	display: inline-block;
+	width: 1.1rem;
+	height: 1.1rem;
+	vertical-align: middle;
+	text-align: center;
+	border: 1px solid #30363d;
+	border-radius: 3px;
+	background-color: var(--item-hover-bg-color);
+	margin-top: -0.5rem;
+	margin-left: -0.1rem;
+}
+
+/* Checkbox hover */
+input[type="checkbox"]:not([disabled]):not(:checked):hover:before {
+	content: "\2713";
+	font-size: 0.9rem;
+	line-height: 1rem;
+	color: var(--text-color);
+}
+
+/* Checkbox checked */
+input[type="checkbox"]:checked:before {
+	content: "\2713";
+	font-size: 0.9rem;
+	line-height: 1rem;
+	color: var(--text-color);
+	margin-top: -0.5rem;
+	margin-left: -0.1rem;
+}
+
+#write input[type="checkbox"]:before,
+#write input[type="checkbox"]:checked:before {
+	margin-top: -0.9rem;
+}
+
+/* Checkbox checked hover*/
+input[type="checkbox"]:checked:hover:before {
+	content: "\2713";
+	font-size: 0.9rem;
+	line-height: 1rem;
+	color: white;
+	margin-top: -0.5rem;
+	margin-left: -0.1rem;
+}
+
+/* Using checkboxes in sublists should not get list circles inside inputs */
+.md-task-list-item {
+	list-style-type: none !important;
+}
+
+/* Input number in settings for Win/Linux */
+input:not([type="range"]):not([type="color"]) {
+	border: 1px solid #30363d !important;
+	border-radius: 3px;
+	background-color: var(--item-hover-bg-color);
+}
+
+.pane-sm input[type="search"] {
+	border: 1px solid #30363d !important;
+}
+
+/* Search in settings */
+#file-library-search-input:hover {
+	border: 1px solid #8b949e !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:active {
+	border-radius: 10px;
+	background-color: #2F333A;
+}
+
+/* Remove dashed border on filenames in the sidebar */
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+	outline: 0 !important;
+}
+
+/* Handle long filenames in sidebar */
+file-node-title-name-part {
+	white-space: pre-wrap;
+}
+
+/* Custom syntax highlighting */
+div.cm-s-inner[lang="css"] .cm-qualifier {
+	color: #a5d6ff !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-tag {
+	color: #7ee787 !important;
+}
+
+div.cm-s-inner[lang="diff"] .cm-meta {
+	color: #d2a8ff !important;
+	font-weight: 700;
+}
+
+div.cm-s-inner[lang="diff"] .cm-negative {
+	color: #d2a8ff !important;
+	font-weight: 700;
+}
+
+div.cm-s-inner[lang="dockerfile"] .cm-variable-2 {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-atom {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="erlang"] .cm-tag {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="fsharp"] .cm-variable {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="go"] .cm-atom {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="http"] .cm-atom {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="java"] .cm-def {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="javascript"] .cm-def {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="less"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="kotlin"] .cm-def {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="markdown"] .cm-comment.cm-variable-2 {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-meta {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-variable-2 {
+	color: #8b949e !important;
+}
+
+div.cm-s-inner[lang="php"] .cm-def {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="python"] .cm-property {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-def {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-variable-3 {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-def {
+	color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-variable-2 {
+	color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-tag {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-error {
+	color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="ruby"] .cm-atom {
+	color: #d2a8ff !important;
+}
+
+
+
+</style><title>Essential</title>
+</head>
+<body class='typora-export os-windows typora-export-show-outline typora-export-collapse-outline'><div class='typora-export-content'>
+<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h1 outline-item-open"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#essential">Essential</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#phrases">Phrases</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#问候语">问候语</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#是否">是/否</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#礼貌用语">礼貌用语</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#问题与请求">问题与请求</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#方向">方向</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#其他短语">其他短语</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#数字">数字</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#地点">地点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#其他有用短语">其他有用短语</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#游玩">游玩</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#主要景点">主要景点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#美食推荐">美食推荐</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#文化活动">文化活动</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#购物建议">购物建议</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#yangon">Yangon</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#旅游景点">旅游景点</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#美食推荐-2">美食推荐</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#实用信息">实用信息</a></div><ul class="outline-children"></ul></li></ul></li><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#文化">文化</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#地理与人民land--people">地理与人民（Land &amp; People）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#宗教节日与传统religion-festivals--traditions">宗教、节日与传统（Religion, Festivals, &amp; Traditions）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#社会生活making-friends">社会生活（Making Friends）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#休闲与娱乐time-out">休闲与娱乐（Time Out）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#旅行健康与安全travel-health--safety">旅行、健康与安全（Travel, Health, &amp; Safety）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#商务简介business-briefing">商务简介（Business Briefing）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#沟通communicating">沟通（Communicating）</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h3 outline-item-single"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#历史简述a-brief-history">历史简述（A Brief History）</a></div><ul class="outline-children"></ul></li></ul></li></ul></li></div></div><div id='write'  class=''><h1 id='essential'><span>Essential</span></h1><h2 id='phrases'><span>Phrases</span></h2><h3 id='问候语'><span>问候语</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>Hello / 你好</span></td><td><span>မင်္ဂလာပါ</span></td><td><span>Mingalaba</span></td></tr><tr><td><span>How are you? / 你好吗？</span></td><td><span>နေကောင်းရဲ့လား။</span></td><td><span>Nei kaung: ye. la:</span></td></tr><tr><td><span>Good morning / 早上好</span></td><td><span>မင်္ဂလာနံနက်ခင်းပါ</span></td><td><span>Mingala nan ne khin: ba</span></td></tr><tr><td><span>Good afternoon / 下午好</span></td><td><span>မင်္ဂလာနေ့ခင်းပါ</span></td><td><span>Mingala nei khin: ba</span></td></tr><tr><td><span>Good evening / 晚上好</span></td><td><span>မင်္ဂလာညနေခင်းပါ</span></td><td><span>Mingala nya. nei khin: ba</span></td></tr><tr><td><span>Good night / 晚安</span></td><td><span>ကောင်းသောညပါ</span></td><td><span>Kaung: thaw nya. ba</span></td></tr><tr><td><span>Goodbye / 再见</span></td><td><span>သွားတော့မယ်။</span></td><td><span>Thwa: dau&#39; me.</span></td></tr><tr><td><span>Nice to meet you / 很高兴见到你</span></td><td><span>တွေ့ရတာဝမ်းသာပါတယ်။</span></td><td><span>Twe. ya. da wan: tha ba de</span></td></tr><tr><td><span>See you again / 再见</span></td><td><span>နောက်ကြည့်မယ်။</span></td><td><span>Nau&#39; kyi. me.</span></td></tr></tbody></table></figure><h3 id='是否'><span>是/否</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>Yes (male) / 是（男性）</span></td><td><span>ဟုတ်ကဲ့ခင်ဗျာ။</span></td><td><span>Hote ke khin bya.</span></td></tr><tr><td><span>Yes (female) / 是（女性）</span></td><td><span>ဟုတ်ကဲ့ရှင်။</span></td><td><span>Hote ke shin.</span></td></tr><tr><td><span>No / 不是</span></td><td><span>မဟုတ်ဘူး။</span></td><td><span>Ma hote bu:</span></td></tr><tr><td><span>Okay / 好的</span></td><td><span>ကောင်းပြီ။</span></td><td><span>Kaung: bi.</span></td></tr><tr><td><span>It&#39;s all right / 没关系</span></td><td><span>အဆင်ပြေပါတယ်။</span></td><td><span>A sin pye ba de</span></td></tr></tbody></table></figure><h3 id='礼貌用语'><span>礼貌用语</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>Thank you / 谢谢</span></td><td><span>ကျေးဇူးတင်ပါတယ်။</span></td><td><span>Kyei: zu: tin ba de</span></td></tr><tr><td><span>Thank you very much / 非常感谢</span></td><td><span>ကျေးဇူးအများကြီးတင်ပါတယ်။</span></td><td><span>Kyei: zu: amya: gyi: tin ba de</span></td></tr><tr><td><span>You&#39;re welcome / 不客气</span></td><td><span>ရပါတယ်။</span></td><td><span>Ya. ba de</span></td></tr><tr><td><span>Sorry / 对不起</span></td><td><span>ဆောရီးပါ။</span></td><td><span>Sorry ba.</span></td></tr><tr><td><span>Excuse me / 打扰一下</span></td><td><span>တဆိတ်လောက်ပါ။</span></td><td><span>Ta sait&#39; laut pa.</span></td></tr><tr><td><span>Please / 请</span></td><td><span>ကျေးဇူးပြုပါ။</span></td><td><span>Kyei: zu: pyu. ba</span></td></tr><tr><td><span>I don&#39;t understand / 我不明白</span></td><td><span>နားမလည်ဘူး။</span></td><td><span>Na: ma le bu:</span></td></tr><tr><td><span>Could you help me? / 你能帮我吗？</span></td><td><span>ကူညီပေးပါဦး။</span></td><td><span>Ku nyi pay ba oun:</span></td></tr></tbody></table></figure><h3 id='问题与请求'><span>问题与请求</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>How much? / 多少钱？</span></td><td><span>ဘယ်လောက်လဲ။</span></td><td><span>Be lau&#39; le:</span></td></tr><tr><td><span>What is this? / 这是什么？</span></td><td><span>ဒါဘာလဲ။</span></td><td><span>Da ba le:</span></td></tr><tr><td><span>Where is the restroom? / 洗手间在哪里？</span></td><td><span>အိမ်သာဘယ်မှာလဲ။</span></td><td><span>Ein tha be hma le:</span></td></tr><tr><td><span>What time is it? / 现在几点了？</span></td><td><span>ဘယ်နှစ်နာရီလဲ။</span></td><td><span>Be hna&#39; na yi le:</span></td></tr><tr><td><span>May I go now? / 我可以走了吗？</span></td><td><span>အခုသွားလို့ရမလား။</span></td><td><span>A khu thwa: lo. ya. ma la:</span></td></tr><tr><td><span>Do you understand? / 你明白吗？</span></td><td><span>နားလည်ရဲ့လား။</span></td><td><span>Na: le ya. la:</span></td></tr><tr><td><span>May I take a photo? / 我可以拍照吗？</span></td><td><span>ဓာတ်ပုံရိုက်လို့ရမလား။</span></td><td><span>Dat pon yite lo. ya. ma la:</span></td></tr><tr><td><span>Where is...? / ...在哪里？</span></td><td><span>...ဘယ်မှာလဲ။</span></td><td><span>...be hma le:</span></td></tr></tbody></table></figure><h3 id='方向'><span>方向</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>Turn left / 左转</span></td><td><span>ဘယ်ဘက်ကွေ့ပါ။</span></td><td><span>be be&#39; kwe&#39; ba</span></td></tr><tr><td><span>Turn right / 右转</span></td><td><span>ညာဘက်ကွေ့ပါ။</span></td><td><span>nya be&#39; kwe&#39; ba</span></td></tr><tr><td><span>Go straight / 直走</span></td><td><span>တည့်တည့်သွားပါ။</span></td><td><span>te&#39; te&#39; thwa: ba</span></td></tr><tr><td><span>Stop here / 在这里停</span></td><td><span>ဒီမှာရပ်ပါ။</span></td><td><span>di hma ya&#39; ba</span></td></tr><tr><td><span>Slow down / 慢一点</span></td><td><span>ဖြေးဖြေးသွားပါ။</span></td><td><span>phye: phye: thwa: ba</span></td></tr><tr><td><span>Turn back / 掉头</span></td><td><span>နောက်ပြန်ကွေ့ပါ။</span></td><td><span>nau&#39; pyan kwe&#39; ba</span></td></tr></tbody></table></figure><h3 id='其他短语'><span>其他短语</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>Very expensive / 太贵了</span></td><td><span>ဈေးကြီးတယ်။</span></td><td><span>Zei: gyi: de</span></td></tr><tr><td><span>I cannot speak Myanmar / 我不会说缅甸语</span></td><td><span>မြန်မာလိုမပြောတတ်ဘူး။</span></td><td><span>Myanmar lo ma pyaw tat bu:</span></td></tr><tr><td><span>Really? / 真的吗？</span></td><td><span>ဟုတ်တယ်လား။</span></td><td><span>Hote de la:</span></td></tr><tr><td><span>It&#39;s impossible / 不可能</span></td><td><span>မဖြစ်နိုင်ဘူး။</span></td><td><span>Ma phyit nain bu:</span></td></tr><tr><td><span>Beautiful! / 漂亮！</span></td><td><span>လှတယ်။</span></td><td><span>Hla. de</span></td></tr><tr><td><span>Be careful / 小心</span></td><td><span>သတိထားပါ။</span></td><td><span>Tha di: hta: ba</span></td></tr><tr><td><span>Don&#39;t worry / 别担心</span></td><td><span>စိတ်မပူပါနဲ့။</span></td><td><span>Seit&#39; ma pu ba ne:</span></td></tr></tbody></table></figure><h3 id='数字'><span>数字</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>One / 一</span></td><td><span>တစ်</span></td><td><span>ta&#39;</span></td></tr><tr><td><span>Two / 二</span></td><td><span>နှစ်</span></td><td><span>hna&#39;</span></td></tr><tr><td><span>Three / 三</span></td><td><span>သုံး</span></td><td><span>thone</span></td></tr><tr><td><span>Four / 四</span></td><td><span>လေး</span></td><td><span>lay:</span></td></tr><tr><td><span>Five / 五</span></td><td><span>ငါး</span></td><td><span>nga:</span></td></tr><tr><td><span>Six / 六</span></td><td><span>ခြောက်</span></td><td><span>chauk&#39;</span></td></tr><tr><td><span>Seven / 七</span></td><td><span>ခုနှစ်</span></td><td><span>kun-hna&#39;</span></td></tr><tr><td><span>Eight / 八</span></td><td><span>ရှစ်</span></td><td><span>shit&#39;</span></td></tr><tr><td><span>Nine / 九</span></td><td><span>ကိုး</span></td><td><span>ko:</span></td></tr><tr><td><span>Ten / 十</span></td><td><span>ဆယ်</span></td><td><span>hse&#39;</span></td></tr><tr><td><span>Eleven / 十一</span></td><td><span>ဆယ့်တစ်</span></td><td><span>hse&#39; ta&#39;</span></td></tr><tr><td><span>Twelve / 十二</span></td><td><span>ဆယ့်နှစ်</span></td><td><span>hse&#39; hna&#39;</span></td></tr><tr><td><span>Thirteen / 十三</span></td><td><span>ဆယ့်သုံး</span></td><td><span>hse&#39; thone</span></td></tr><tr><td><span>Fourteen / 十四</span></td><td><span>ဆယ့်လေး</span></td><td><span>hse&#39; lay:</span></td></tr><tr><td><span>Fifteen / 十五</span></td><td><span>ဆယ့်ငါး</span></td><td><span>hse&#39; nga:</span></td></tr><tr><td><span>Sixteen / 十六</span></td><td><span>ဆယ့်ခြောက်</span></td><td><span>hse&#39; chauk&#39;</span></td></tr><tr><td><span>Seventeen / 十七</span></td><td><span>ဆယ့်ခုနှစ်</span></td><td><span>hse&#39; kun-hna&#39;</span></td></tr><tr><td><span>Eighteen / 十八</span></td><td><span>ဆယ့်ရှစ်</span></td><td><span>hse&#39; shit&#39;</span></td></tr><tr><td><span>Nineteen / 十九</span></td><td><span>ဆယ့်ကိုး</span></td><td><span>hse&#39; ko:</span></td></tr><tr><td><span>Twenty / 二十</span></td><td><span>နှစ်ဆယ်</span></td><td><span>hna&#39; hse&#39;</span></td></tr><tr><td><span>Thirty / 三十</span></td><td><span>သုံးဆယ်</span></td><td><span>thone hse&#39;</span></td></tr><tr><td><span>Forty / 四十</span></td><td><span>လေးဆယ်</span></td><td><span>lay: hse&#39;</span></td></tr><tr><td><span>Fifty / 五十</span></td><td><span>ငါးဆယ်</span></td><td><span>nga: hse&#39;</span></td></tr><tr><td><span>Sixty / 六十</span></td><td><span>ခြောက်ဆယ်</span></td><td><span>chauk&#39; hse&#39;</span></td></tr><tr><td><span>Seventy / 七十</span></td><td><span>ခုနှစ်ဆယ်</span></td><td><span>kun-hna&#39; hse&#39;</span></td></tr><tr><td><span>Eighty / 八十</span></td><td><span>ရှစ်ဆယ်</span></td><td><span>shit&#39; hse&#39;</span></td></tr><tr><td><span>Ninety / 九十</span></td><td><span>ကိုးဆယ်</span></td><td><span>ko: hse&#39;</span></td></tr><tr><td><span>One Hundred / 一百</span></td><td><span>တစ်ရာ</span></td><td><span>ta&#39; ya</span></td></tr><tr><td><span>One Thousand / 一千</span></td><td><span>တစ်ထောင်</span></td><td><span>ta&#39; htaung</span></td></tr><tr><td><span>Ten Thousand / 一万</span></td><td><span>တစ်သောင်း</span></td><td><span>ta&#39; thaung</span></td></tr><tr><td><span>One Hundred Thousand / 十万</span></td><td><span>တစ်သိန်း</span></td><td><span>ta&#39; thein</span></td></tr><tr><td><span>One Million / 一百万</span></td><td><span>တစ်သန်း</span></td><td><span>ta&#39; than</span></td></tr></tbody></table></figure><h3 id='地点'><span>地点</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>Airport / 机场</span></td><td><span>လေဆိပ်</span></td><td><span>lei: zei&#39;</span></td></tr><tr><td><span>Bus Station / 公交车站</span></td><td><span>ဘတ်စ်ကားမှတ်တိုင်</span></td><td><span>bat&#39; hka: hma&#39; tain</span></td></tr><tr><td><span>Railway Station / 火车站</span></td><td><span>ဘူတာရုံ</span></td><td><span>bu da yon</span></td></tr><tr><td><span>Hotel / 酒店</span></td><td><span>ဟိုတယ်</span></td><td><span>ho te</span></td></tr><tr><td><span>Embassy / 大使馆</span></td><td><span>သံရုံး</span></td><td><span>than yon:</span></td></tr><tr><td><span>Hospital / 医院</span></td><td><span>ဆေးရုံ</span></td><td><span>hsei: yon</span></td></tr><tr><td><span>Clinic / 诊所</span></td><td><span>ဆေးခန်း</span></td><td><span>hsei: gan:</span></td></tr><tr><td><span>Police Station / 警察局</span></td><td><span>ရဲစခန်း</span></td><td><span>ye: sa khan:</span></td></tr><tr><td><span>Post Office / 邮局</span></td><td><span>စာတိုက်</span></td><td><span>sa daik</span></td></tr><tr><td><span>Market / 市场</span></td><td><span>ဈေး</span></td><td><span>zei:</span></td></tr><tr><td><span>River Boat Jetty / 码头</span></td><td><span>သင်္ဘောဆိပ်ကမ်း</span></td><td><span>thin baw seit&#39; kan:</span></td></tr><tr><td><span>Guest House / 招待所</span></td><td><span>အိမ်ယာသ</span></td><td><span>ein ya tha</span></td></tr><tr><td><span>Restaurant / 餐厅</span></td><td><span>စားသောက်ဆိုင်</span></td><td><span>sa: thauk&#39; hsain</span></td></tr></tbody></table></figure><h3 id='其他有用短语'><span>其他有用短语</span></h3><figure class='table-figure'><table><thead><tr><th><strong><span>English/中文</span></strong></th><th><strong><span>Burmese/缅甸语</span></strong></th><th><strong><span>Romanization/罗马拼音</span></strong></th></tr></thead><tbody><tr><td><span>Where is...? / ...在哪里？</span></td><td><span>...ဘယ်မှာလဲ။</span></td><td><span>...be hma le:</span></td></tr><tr><td><span>How far? / 多远？</span></td><td><span>ဘယ်လောက်ဝေးလဲ။</span></td><td><span>be&#39; lauk&#39; way: le:</span></td></tr><tr><td><span>Which way? / 哪条路？</span></td><td><span>ဘယ်လမ်းလဲ။</span></td><td><span>be&#39; lan&#39; le:</span></td></tr><tr><td><span>I want to go to... / 我想去...</span></td><td><span>...သွားချင်ပါတယ်။</span></td><td><span>...thwa: chin ba de</span></td></tr><tr><td><span>How do I get to...? / 我怎么去...</span></td><td><span>...ဘယ်လိုသွားရမလဲ။</span></td><td><span>...be&#39; lo thwa: ya. ma le:</span></td></tr><tr><td><span>Can you help me? / 你能帮我吗？</span></td><td><span>ကူညီပေးပါဦး။</span></td><td><span>ku nyi pay ba oun:</span></td></tr><tr><td><span>I don&#39;t understand / 我不明白</span></td><td><span>နားမလည်ဘူး။</span></td><td><span>na: ma le bu:</span></td></tr><tr><td><span>Please speak slowly / 请说慢一点</span></td><td><span>ဖြေးဖြေးပြောပါ။</span></td><td><span>phye: phye: pyaw ba</span></td></tr><tr><td><span>How much does it cost? / 这个多少钱？</span></td><td><span>ဒါဘယ်လောက်လဲ။</span></td><td><span>da be&#39; lauk&#39; le:</span></td></tr><tr><td><span>I would like to buy... / 我想买...</span></td><td><span>...ဝယ်ချင်ပါတယ်။</span></td><td><span>...we&#39; chin ba de</span></td></tr><tr><td><span>Do you have...? / 你有...吗？</span></td><td><span>...ရှိလား။</span></td><td><span>...shi. la:</span></td></tr><tr><td><span>Where can I find...? / 我在哪里可以找到...</span></td><td><span>...ဘယ်မှာရှာနိုင်မလဲ။</span></td><td><span>...be&#39; hma sha nain ma le:</span></td></tr><tr><td><span>Is there a... near here? / 这附近有...吗？</span></td><td><span>ဒီနားမှာ...ရှိလား။</span></td><td><span>di na: hma...shi. la:</span></td></tr><tr><td><span>What is this called in Burmese? / 这个用缅甸语怎么说？</span></td><td><span>ဒါကိုမြန်မာလိုဘာလို့ခေါ်လဲ။</span></td><td><span>da go myanma lo ba lo khaw le:</span></td></tr></tbody></table></figure><hr /><h2 id='游玩'><span>游玩</span></h2><h3 id='主要景点'><span>主要景点</span></h3><ol start='' ><li><p><strong><span>仰光 (Yangon)</span></strong><span> ：大金塔 (Shwedagon Pagoda)，仰光市中心的殖民建筑。</span></p></li><li><p><strong><span>蒲甘 (Bagan)</span></strong><span> ：佛塔群，著名的日出和日落观景点。</span></p></li><li><p><strong><span>曼德勒 (Mandalay)</span></strong><span> ：历史古城区，包括阿玛拉普拉 (Amarapura) 的乌本桥和曼德勒皇宫。</span></p></li><li><p><strong><span>因瓦 (Inwa) </span>&amp;<span> 实皆 (Sagaing)</span></strong><span> ：旧王朝的遗址和佛教寺庙。</span></p></li><li><p><strong><span>茵莱湖 (Inle Lake)</span></strong><span> ：水上市场和独特的腿划船法。</span></p></li><li><p><strong><span>掸邦 (Shan State)</span></strong><span> ：探索少数民族文化和自然风光。</span></p></li><li><p><strong><span>海滩</span></strong><span>：如昂山市场附近的海滩，提供放松和娱乐的好去处。</span></p></li></ol><h3 id='美食推荐'><span>美食推荐</span></h3><ol start='' ><li><p><strong><span>Mohinga</span></strong><span>：缅甸的传统鱼汤米线，是国家的早餐之一。</span></p></li><li><p><strong><span>Tea Leaf Salad (Lahpet Thoke)</span></strong><span> ：发酵茶叶制成的沙拉，混合了豆类、番茄和辣椒。</span></p></li><li><p><strong><span>Shan Noodles</span></strong><span>：来自掸邦的特色面条，可以是汤面或干拌面。</span></p></li><li><p><strong><span>Curries</span></strong><span>：缅甸咖喱，特色是使用当地香料和肉类，常与米饭一起享用。</span></p></li></ol><h3 id='文化活动'><span>文化活动</span></h3><ol start='' ><li><p><strong><span>Thingyan水节</span></strong><span>：缅甸新年水节，人们互相泼水以庆祝新年。</span></p></li><li><p><strong><span>藤球</span></strong><span>：缅甸的国球，一种结合了运动和舞蹈元素的球类游戏。</span></p></li><li><p><strong><span>访问寺庙</span></strong><span>：体验佛教文化，如脱鞋入寺，尊重佛教传统。</span></p></li></ol><h3 id='购物建议'><span>购物建议</span></h3><ol start='' ><li><p><strong><span>传统服饰</span></strong><span>：如缅甸的传统裙子笼基。</span></p></li><li><p><strong><span>手工艺品</span></strong><span>：包括漆器、木雕和石雕。</span></p></li><li><p><strong><span>宝石</span></strong><span>：缅甸著名的翡翠和红宝石，可在官方认证的店铺购买。</span></p></li></ol><hr /><h2 id='yangon'><span>Yangon</span></h2><h3 id='旅游景点'><span>旅游景点</span></h3><ol start='' ><li><p><strong><span>仰光大金塔（Shwedagon Pagoda）</span></strong><span> ：</span></p><ul><li><p><span>仰光的象征，被认为是全世界最古老且最壮观的佛教圣地之一。</span></p></li><li><p><span>大金塔高约99米，外部覆盖着真金箔，塔尖镶嵌有成千上万颗宝石。</span></p></li><li><p><span>最佳参观时间为日落时分，当金色的塔身在夕阳下显得格外神圣和美丽。</span></p></li></ul></li><li><p><strong><span>苏莱佩果达（Sule Pagoda）</span></strong><span> ：</span></p><ul><li><p><span>市中心的另一座重要佛塔，据说建塔历史甚至比仰光大金塔还要早。</span></p></li><li><p><span>位于市政厅附近的一个交通圆环内，是仰光市的地理和精神中心。</span></p></li></ul></li><li><p><strong><span>博多戈公园（Bogyoke Aung San Park）和博多戈市场（Bogyoke Aung San Market）</span></strong><span> ：</span></p><ul><li><p><span>公园提供了一处宁静的休憩空间，市场则是寻找缅甸传统手工艺品和纪念品的最佳地点。</span></p></li><li><p><span>市场内售卖各种手工艺品、宝石、布料和其他旅游纪念品。</span></p></li></ul></li><li><p><strong><span>仰光殖民地遗迹</span></strong><span>：</span></p><ul><li><p><span>仰光市区有许多保存完好的殖民时期建筑，如法院、市政厅和银行大楼。</span></p></li><li><p><span>建议参加步行导览游以更好地了解这些建筑的历史背景。</span></p></li></ul></li></ol><h3 id='美食推荐-2'><span>美食推荐</span></h3><ol start='' ><li><p><strong><span>缅甸传统茶馆体验</span></strong><span>：</span></p><ul><li><p><span>在仰光，茶馆文化非常盛行，是当地人日常社交和享用低价美食的地方。</span></p></li><li><p><span>茶馆里常见的食物包括茶叶沙拉、摩辛加（鱼汤米线）和各种小吃。</span></p></li></ul></li><li><p><strong><span>街边小吃</span></strong><span>：</span></p><ul><li><p><span>仰光的街头小吃反映了缅甸菜的多样性，可以尝试如Samusa Thoke（萨摩萨沙拉）等传统小吃。</span></p></li></ul></li></ol><h3 id='实用信息'><span>实用信息</span></h3><ul><li><p><strong><span>交通</span></strong><span>：</span></p><ul><li><p><span>仰光的公共交通主要依赖公交车和出租车。最近几年，仰光也推出了更现代化的公交系统，提高了市内交通的效率。</span></p></li><li><p><span>出租车是游览市区较为方便的方式，但应注意议价或使用计程表。</span></p></li></ul></li><li><p><strong><span>住宿</span></strong><span>：</span></p><ul><li><p><span>仰光提供从豪华酒店到经济型宾馆的广泛选择。许多高端酒店提供优美的市景和卓越的服务。</span></p></li></ul></li><li><p><strong><span>购物</span></strong><span>：</span></p><ul><li><p><span>博多戈市场是购买传统缅甸手工艺品如木雕、漆器和宝石的理想之地。</span></p></li></ul></li></ul><hr /><h2 id='文化'><span>文化</span></h2><h3 id='地理与人民land--people'><span>地理与人民（Land &amp; People）</span></h3><p><span>缅甸位于东南亚，拥有独特的地理位置和多样的自然环境。它的北部接壤中国，东部与泰国和老挝为邻，西部和印度以及孟加拉国相连，南部是延伸到安达曼海的伊洛瓦底江三角洲。缅甸的地形从北部的喜马拉雅山脉延伸到南部的热带海岸线，北部的高山区域常年积雪，而南部则是典型的热带季风气候。</span></p><p><span>缅甸的人口超过5300万，主要民族是缅族，约占总人口的68%，其他主要民族包括掸族、克伦族、克钦族、克耶族、若开族和孟族等。每个民族都有自己独特的语言和文化，这使得缅甸成为一个极其多元化的国家。此外，缅甸的语言是缅甸语，是一种孟-藏语系的语言，而英语在商务和教育中也广泛使用。</span></p><h3 id='宗教节日与传统religion-festivals--traditions'><span>宗教、节日与传统（Religion, Festivals, &amp; Traditions）</span></h3><p><span>佛教是缅甸的主要宗教，几乎占据了国民信仰的核心地位，大约89%的人口信奉佛教。佛教的影响不仅体现在人们的日常生活中，也显现在国家的节日和建筑上。如仰光的大金塔是缅甸最神圣的佛教象征之一。</span></p><p><span>节日方面，如满月节、潑水节等是全国性的庆典，不仅是宗教活动，也是社交和家庭团聚的时刻。此外，缅甸还保留了许多传统习俗，比如穿着传统的长裙，这是缅甸人日常生活中非常重要的文化标志。</span></p><h3 id='社会生活making-friends'><span>社会生活（Making Friends）</span></h3><p><span>在缅甸，家庭和朋友关系占据了社会关系的核心。缅甸人非常看重尊重和礼貌，在拜访家庭或参加社交活动时，带上一些小礼物是常见的礼仪。在社交场合中，初次见面通常会轻握手，并使用合适的敬语，如对男性使用“乌”（U），对女性使用“道”（Daw）作为尊称。</span></p><h3 id='休闲与娱乐time-out'><span>休闲与娱乐（Time Out）</span></h3><p><span>缅甸的美食是东南亚美食的典型代表，以米饭、鱼和蔬菜为主，喜欢使用鱼露和辣椒。茶叶沙拉是一种独特的缅甸菜，由发酵的茶叶、花生、大蒜、炸豆和其他调料制成。除了美食，缅甸人也喜欢体育活动，如传统的踢球游戏“车龙”。</span></p><p><span>在旅游方面，缅甸拥有丰富的自然和历史景点，如蒲甘的古老佛塔群、曼德勒的皇宫和因莱湖的浮动花园。这些地方不仅吸引了大量的国内游客，也越来越受到国际游客的欢迎。</span></p><h3 id='旅行健康与安全travel-health--safety'><span>旅行、健康与安全（Travel, Health, &amp; Safety）</span></h3><p><span>缅甸的医疗设施在城市地区较为发达，但在农村地区仍然有限。访问缅甸时，建议携带常用药品，并注意预防疟疾和登革热等疾病。在安全方面，虽然缅甸是一个相对安全的国家，但旅行者仍需注意个人财物安全，尤其在人多的市场或节日活动中。</span></p><h3 id='商务简介business-briefing'><span>商务简介（Business Briefing）</span></h3><p><span>缅甸的商务环境在过去几年中有所改善，但与西方国家相比仍有差距。在缅甸做生意时，重视建立个人关系是非常重要的，商务会议通常开始于非正式的交谈，以建立信任。此外，尊重缅甸的商业文化，如守时、礼貌和适当的商务着装，是成功的关键。</span></p><h3 id='沟通communicating'><span>沟通（Communicating）</span></h3><p><span>在缅甸，有效的沟通不仅仅是说话和听，还包括非语言的交流，如肢体语言和面部表情。缅甸人通常不会直接表达否定意见，以避免冲突。在商务和日常交流中，了解并适应这些沟通细节非常重要。</span></p><h3 id='历史简述a-brief-history'><span>历史简述（A Brief History）</span></h3><p><span>缅甸的历史可以追溯到几千年前的古代文明。书中详细记录了从蒲甘王朝到英国殖民时期的历史事件，再到第二次世界大战后缅甸的独立过程。这一部分帮助读者了解缅甸现代社会的形成是如何受到其复杂历史的影响的。</span></p></div></div>
+
+<script>(function(){function e(e,n,i){document.addEventListener(e,function(e){if(!e.defaultPrevented)for(var t=e.target;t&&t!=this;t=t.parentNode)if(t.matches(n)){!1===i.call(t,e)&&(e.preventDefault(),e.stopPropagation());break}},!1)}var t=document.body.parentElement,i=[],r=null,o=document.body.classList.contains("typora-export-collapse-outline");function a(){return t.scrollTop}e("click",".outline-expander",function(e){var t=this.closest(".outline-item-wrapper").classList;return t.contains("outline-item-open")?t.remove("outline-item-open"):t.add("outline-item-open"),u(),!1}),e("click",".outline-item",function(e){var t=this.querySelector(".outline-label");location.hash="#"+t.getAttribute("href"),o&&((t=this.closest(".outline-item-wrapper").classList).contains("outline-item-open")||t.add("outline-item-open"),d(),t.add("outline-item-active"))});function s(){var e=a();r=null;for(var t=0;t<i.length&&i[t][1]-e<60;t++)r=i[t]}function n(){c=setTimeout(function(){var n;i=[],n=a(),document.querySelector("#write").querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(e=>{var t=e.getAttribute("id");i.push([t,n+e.getBoundingClientRect().y])}),s(),u()},300)}var l,c,d=function(){document.querySelectorAll(".outline-item-active").forEach(e=>e.classList.remove("outline-item-active")),document.querySelectorAll(".outline-item-single.outline-item-open").forEach(e=>e.classList.remove("outline-item-open"))},u=function(){if(r&&(d(),t=document.querySelector('.outline-label[href="#'+(CSS.escape?CSS.escape(r[0]):r[0])+'"]')))if(o){var e=t.closest(".outline-item-open>ul>.outline-item-wrapper");if(e)e.classList.add("outline-item-active");else{for(var t,n=(t=t.closest(".outline-item-wrapper")).parentElement.closest(".outline-item-wrapper");n;)n=(t=n).parentElement.closest(".outline-item-wrapper");t.classList.add("outline-item-active")}}else t.closest(".outline-item-wrapper").classList.add("outline-item-active")};window.addEventListener("scroll",function(e){l&&clearTimeout(l),l=setTimeout(function(){s(),u()},300)});window.addEventListener("resize",function(e){c&&clearTimeout(c),n()}),n()})();</script><script>
+    // 创建按钮容器
+    const controlsContainer = document.createElement('div');
+    controlsContainer.className = 'outline-controls';
+
+    // 创建 "展开" 按钮
+    const expandButton = document.createElement('button');
+    expandButton.id = 'expand-all';
+    expandButton.innerHTML = '&#x21F2;'; // Unicode箭头图标
+    expandButton.title = '全部展开';
+    expandButton.addEventListener('click', () => {
+        document.querySelectorAll('.outline-item-wrapper').forEach(item => {
+            item.classList.add('outline-item-open');
+        });
+    });
+
+    // 创建 "折叠" 按钮
+    const collapseButton = document.createElement('button');
+    collapseButton.id = 'collapse-all';
+    collapseButton.innerHTML = '&#x21F1;'; // Unicode箭头图标
+    collapseButton.title = '一键折叠';
+    collapseButton.addEventListener('click', () => {
+        document.querySelectorAll('.outline-item-wrapper').forEach(item => {
+            item.classList.remove('outline-item-open');
+        });
+    });
+
+    // 创建 "定位当前阅读位置" 按钮
+    const locateButton = document.createElement('button');
+    locateButton.id = 'locate-current';
+    locateButton.innerHTML = '&#x25CF;';
+    locateButton.title = '定位当前阅读位置';
+    locateButton.addEventListener('click', () => {
+        const activeItem = document.querySelector('.outline-item-active');
+        if (activeItem) {
+            // 展开所有父级目录
+            let parent = activeItem.closest('.outline-item-wrapper');
+            while (parent) {
+                parent.classList.add('outline-item-open');
+                parent = parent.parentElement.closest('.outline-item-wrapper');
+            }
+
+            // 滚动到目标位置
+            activeItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            alert('未找到当前阅读位置！');
+        }
+    });
+    // 将按钮添加到容器
+    controlsContainer.appendChild(expandButton);
+    controlsContainer.appendChild(collapseButton);
+    controlsContainer.appendChild(locateButton);
+
+    // 将按钮容器插入到侧边栏顶部
+    const outlineSidebar = document.querySelector('.typora-export-sidebar .outline-content');
+    if (outlineSidebar) {
+        outlineSidebar.insertBefore(controlsContainer, outlineSidebar.firstChild);
+    }
+
+    // 平滑滚动效果：为大纲链接添加事件
+    document.querySelectorAll('.outline-item a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').replace('#', '');
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+<style>
+    /* 按钮容器样式 */
+    .outline-controls {
+        position: sticky; /* 固定在滚动范围内 */
+        top: 10px; /* 距顶部一定距离 */
+        z-index: 1000; /* 确保在其他元素之上 */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px; /* 按钮间距 */
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+        border-radius: 12px; /* 圆角效果 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+        width: 170px; /* 固定宽度 */
+    }
+
+    /* 按钮样式 */
+    .outline-controls button {
+        width: 40px; /* 按钮宽度 */
+        height: 40px; /* 按钮高度 */
+        border: none; /* 无边框 */
+        border-radius: 50%; /* 圆形按钮 */
+        background-color: rgba(255, 255, 255, 0.8); /* 按钮背景色 */
+        color: #666; /* 按钮颜色 */
+        font-size: 20px; /* 图标大小 */
+        cursor: pointer; /* 鼠标样式 */
+        transition: all 0.3s ease; /* 动画过渡效果 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 按钮悬停效果 */
+    .outline-controls button:hover {
+        background-color: rgba(255, 255, 255, 1); /* 悬停时背景全不透明 */
+        color: #333; /* 悬停时图标颜色变深 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加阴影 */
+    }
+
+    /* 强制覆盖大纲当前阅读位置的高亮颜色 */
+    .outline-item-active > .outline-item .outline-label {
+        color: rgb(174, 12, 12) !important; /* 大红色 */
+        font-weight: bold; /* 加粗 */
+        font-size: 1.4em; /* 放大 */
+    }
+</style>
+
+<script>
+    // 创建时间和进度容器
+    const infoContainer = document.createElement('div');
+    infoContainer.className = 'floating-info';
+
+    // 创建时间显示区域
+    const timeDisplay = document.createElement('div');
+    timeDisplay.id = 'local-time';
+
+    // 创建阅读进度显示区域
+    const progressDisplay = document.createElement('div');
+    progressDisplay.id = 'reading-progress';
+
+    // 将时间和进度显示区域添加到容器
+    infoContainer.appendChild(timeDisplay);
+    infoContainer.appendChild(progressDisplay);
+
+    // 将容器插入到页面底部
+    document.body.appendChild(infoContainer);
+
+    // 定时更新本地时间
+    setInterval(() => {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
+    }, 1000);
+
+    // 更新阅读进度
+    const updateProgress = () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = Math.min(100, Math.round((scrollTop / scrollHeight) * 100));
+        progressDisplay.textContent = `进度: ${progress}%`;
+    };
+    document.addEventListener('scroll', updateProgress);
+    updateProgress(); // 初始化进度
+</script>
+
+<style>
+    /* 时间和进度容器样式 */
+    .floating-info {
+        position: fixed; /* 固定位置 */
+        bottom: 20px; /* 距离页面底部 */
+        right: 20px; /* 距离页面右侧 */
+        z-index: 1000; /* 层级优先 */
+        background-color: rgba(0, 0, 0, 0.7); /* 半透明背景 */
+        color: white; /* 文本颜色 */
+        font-size: 14px; /* 字体大小 */
+        font-weight: bold; /* 加粗 */
+        padding: 10px 15px; /* 内边距 */
+        border-radius: 12px; /* 圆角效果 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 阴影效果 */
+        display: flex;
+        flex-direction: column; /* 垂直布局 */
+        align-items: center; /* 水平居中 */
+        justify-content: center; /* 垂直居中 */
+        gap: 5px; /* 子元素间距 */
+        width: 120px; /* 固定宽度 */
+        text-align: center; /* 文本居中 */
+    }
+
+    /* 时间显示样式 */
+    #local-time {
+        font-size: 16px; /* 时间字体大小 */
+    }
+
+    /* 阅读进度显示样式 */
+    #reading-progress {
+        font-size: 14px; /* 阅读进度字体大小 */
+    }
+</style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	  // 创建大纲圆形按钮
+	  const outlineButton = document.createElement("button");
+	  outlineButton.innerHTML = "☰"; // 可换为其他符号，例如 "≡"
+	  outlineButton.style.cssText = `
+		position: fixed;
+		top: 10px;
+		right: 10px;
+		z-index: 1000;
+		width: 50px;
+		height: 50px;
+		background: rgba(0, 0, 0, 0.6);
+		color: white;
+		font-size: 24px;
+		border: none;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+		cursor: pointer;
+		transition: background 0.3s ease;
+	  `;
+	  outlineButton.addEventListener("mouseover", () => {
+		outlineButton.style.background = "rgba(0, 0, 0, 0.8)";
+	  });
+	  outlineButton.addEventListener("mouseout", () => {
+		outlineButton.style.background = "rgba(0, 0, 0, 0.6)";
+	  });
+	  document.body.appendChild(outlineButton);
+  
+	  // 创建半透明大纲容器
+	  const outlineModal = document.createElement("div");
+	  outlineModal.style.cssText = `
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+		max-height: 80%;
+		background: rgba(255, 255, 255, 0.9);
+		border-radius: 15px;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+		overflow-y: auto;
+		z-index: 1001;
+		padding: 20px;
+	  `;
+	  document.body.appendChild(outlineModal);
+  
+	  // 美化关闭按钮
+	  const closeModalButton = document.createElement("button");
+	  closeModalButton.innerHTML = "&times;";
+	  closeModalButton.style.cssText = `
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		width: 30px;
+		height: 30px;
+		background: rgba(255, 0, 0, 0.7);
+		color: white;
+		border: none;
+		border-radius: 50%;
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		transition: background 0.3s ease;
+	  `;
+	  closeModalButton.addEventListener("mouseover", () => {
+		closeModalButton.style.background = "rgba(255, 0, 0, 0.9)";
+	  });
+	  closeModalButton.addEventListener("mouseout", () => {
+		closeModalButton.style.background = "rgba(255, 0, 0, 0.7)";
+	  });
+	  closeModalButton.addEventListener("click", () => {
+		outlineModal.style.display = "none";
+	  });
+	  outlineModal.appendChild(closeModalButton);
+  
+	  // 填充大纲内容
+	  const outlineContent = document.createElement("div");
+	  outlineContent.style.cssText = `
+		font-size: 16px;
+		line-height: 1.6;
+		color: #333;
+	  `;
+	  outlineModal.appendChild(outlineContent);
+  
+	  const outlineItems = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+	  outlineItems.forEach((item) => {
+		const link = document.createElement("a");
+		link.href = `#${item.id}`;
+		link.innerText = `${item.tagName}: ${item.textContent}`;
+		link.style.cssText = `
+		  display: block;
+		  margin: 5px 0;
+		  color: #007bff;
+		  text-decoration: none;
+		`;
+		link.addEventListener("click", () => {
+		  outlineModal.style.display = "none";
+		});
+		outlineContent.appendChild(link);
+	  });
+  
+	  outlineButton.addEventListener("click", () => {
+		outlineModal.style.display = "block";
+	  });
+  
+	  // 底部多层级指示器
+	  const sectionIndicator = document.createElement("div");
+	  sectionIndicator.style.cssText = `
+		position: fixed;
+		bottom: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 10px 20px;
+		background: rgba(0, 0, 0, 0.8);
+		color: white;
+		border-radius: 10px;
+		font-size: 14px;
+		z-index: 1000;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	  `;
+	  document.body.appendChild(sectionIndicator);
+  
+	  const updateSectionIndicator = () => {
+		const sections = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+		const scrollY = window.scrollY;
+		let currentHierarchy = [];
+  
+		sections.forEach((section) => {
+		  const rect = section.getBoundingClientRect();
+		  if (rect.top <= window.innerHeight / 2) {
+			currentHierarchy = [...currentHierarchy, section.textContent];
+			currentHierarchy = currentHierarchy.slice(-3); // 保留最近三个层级
+		  }
+		});
+  
+		sectionIndicator.innerText = currentHierarchy.join(" > ");
+	  };
+  
+	  window.addEventListener("scroll", updateSectionIndicator);
+	  updateSectionIndicator();
+	});
+  </script></body>
+</html>
