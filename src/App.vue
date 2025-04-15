@@ -69,32 +69,21 @@
 import { ref, reactive } from 'vue'
 import { gsap } from 'gsap'
 
+import chinaFlag from './assets/china.png'
+import ukFlag from './assets/united-kingdom.png'
+import latviaFlag from './assets/latvia.png'
+import japanFlag from './assets/japan.png'
+
 export default {
   name: 'App',
   setup() {
     const currentLang = ref('zh')
     
     const languages = [
-      {
-        code: 'zh',
-        name: '中文',
-        flag: '/src/assets/china.png'
-      },
-      {
-        code: 'en',
-        name: 'English',
-        flag: '/src/assets/united-kingdom.png'
-      },
-      {
-        code: 'lv',
-        name: 'Latviešu',
-        flag: '/src/assets/latvia.png'
-      },
-      {
-        code: 'ja',
-        name: '日本語',
-        flag: '/src/assets/japan.png'
-      }
+      { code: 'zh', name: '中文', flag: chinaFlag },
+      { code: 'en', name: 'English', flag: ukFlag },
+      { code: 'lv', name: 'Latviešu', flag: latviaFlag },
+      { code: 'ja', name: '日本語', flag: japanFlag }
     ]
     
     const translations = {
@@ -230,3 +219,14 @@ export default {
   }
 }
 </script>
+
+
+## 总结
+
+- **图片路径**：用 import 或 public 目录，不要写 `/src/assets/xxx.png`。
+- **Vite base**：生产环境要设为仓库名 `/xinjian-zhang.github.io/`。
+- **particles.js**：建议换用 tsparticles 或找兼容严格模式的版本。
+
+---
+
+### 推荐修改（以图片路径为例）
